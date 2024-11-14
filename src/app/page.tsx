@@ -6,21 +6,21 @@ export default function Home() {
 		<div className="bg-gray-900 bg-home-bg bg-cover bg-center py-16 sm:py-24">
 			<main className="flex flex-col justify-center text-center max-w-5xl mx-auto h-dvh">
 				<div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-					<div className="relative isolate overflow-hidden bg-gray-900/80 py-24 shadow-2xl sm:rounded-3xl sm:px-24 xl:py-32">
+					<div className="relative isolate overflow-hidden bg-gray-900/80 px-3 py-24 shadow-2xl sm:rounded-3xl sm:px-24 xl:py-32">
 						<h1 className="mx-auto max-w-3xl text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl">
 							Aqua Dance Flow
 						</h1>
 						<div className="flex items-center gap-4 mt-3">
 							<ExclamationTriangleIcon className="h-6 w-6 sm:h-8 sm:w-8 text-amber-500" />
 							<h2 className="mx-auto max-w-3xl text-center text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-								Le site est en cours de construction.
+								Site en cours de construction.
 							</h2>
 							<ExclamationTriangleIcon className="h-6 w-6 sm:h-8 sm:w-8 text-amber-500" />
 						</div>
 						<p className="mx-auto mt-6 max-w-lg text-center text-lg text-gray-300">
 							Soyez les premiers informés de notre lancement ! Laissez-nous
-							votre email pour recevoir toutes les informations dès que le site
-							sera en ligne.
+							votre email pour recevoir toutes les informations dès que{" "}
+							<span className="text-nowrap ">le site sera en ligne.</span>
 						</p>
 
 						<form className="mx-auto mt-10 flex max-w-md gap-x-4">
