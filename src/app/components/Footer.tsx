@@ -58,7 +58,7 @@ const navigation = {
 
 export default function Footer() {
 	return (
-		<footer className="bg-black">
+		<footer className="bg-white">
 			<div className="mx-auto max-w-7xl px-6 pb-8 pt-8 sm:pt-16 lg:px-8 lg:pt-24">
 				<div className="grid grid-cols-2 gap-6 xl:grid-cols-3 xl:gap-8">
 					<div className="space-y-8">
@@ -73,7 +73,7 @@ export default function Footer() {
 								priority={true}
 							/>
 						</Link>
-						<p className="text-balance text-sm/6 text-gray-300 max-w-64">
+						<p className="text-balance text-sm/6 text-gray-600 max-w-64">
 							Une nouvelle discipline sportive et artistique, inspirée de
 							l&apos;œuvre AMA
 						</p>
@@ -83,7 +83,7 @@ export default function Footer() {
 									key={item.name}
 									href={item.href}
 									target="_blank"
-									className="text-gray-400 hover:text-gray-300"
+									className="text-gray-400 hover:text-gray-600"
 								>
 									<span className="sr-only">{item.name}</span>
 									<item.icon aria-hidden="true" className="size-6" />
@@ -94,13 +94,13 @@ export default function Footer() {
 					<div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
 						<div className="md:grid md:grid-cols-2 md:gap-8">
 							<div>
-								<h3 className="text-sm/6 font-semibold text-white">Menu</h3>
+								<h3 className="text-sm/6 font-semibold text-black">Menu</h3>
 								<ul role="list" className="mt-6 space-y-4">
 									{navigation.menu.map((item) => (
 										<li key={item.name}>
 											<a
 												href={item.href}
-												className="text-sm/6 text-gray-400 hover:text-white"
+												className="text-sm/6 text-gray-600 hover:text-gray-900"
 											>
 												{item.name}
 											</a>
@@ -111,13 +111,13 @@ export default function Footer() {
 						</div>
 						<div className="md:grid md:grid-cols-2 md:gap-8">
 							<div>
-								<h3 className="text-sm/6 font-semibold text-white">Legal</h3>
+								<h3 className="text-sm/6 font-semibold text-black">Legal</h3>
 								<ul role="list" className="mt-6 space-y-4">
 									{navigation.legal.map((item) => (
 										<li key={item.name}>
 											<a
 												href={item.href}
-												className="text-sm/6 text-gray-400 hover:text-white"
+												className="text-sm/6 text-gray-600 hover:text-gray-900"
 											>
 												{item.name}
 											</a>
@@ -128,11 +128,14 @@ export default function Footer() {
 						</div>
 					</div>
 				</div>
-				<div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-					<p className="text-sm/6 text-gray-400">
-						Copyright &copy; {new Date().getFullYear()} Aqua Dance Flow. Tous
-						droits réservés.
+				<div className="flex space-x-6 text-sm/6 text-gray-600 mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
+					<p>
+						Copyright &copy; {new Date().getFullYear()} Aqua Dance Flow.{" "}
+						<span className=" text-nowrap">Tous droits réservés.</span>
 					</p>
+					<a href="https://www.sgautier.dev/" target="_blank">
+						<p translate="no">Designed by SG</p>
+					</a>
 				</div>
 			</div>
 		</footer>

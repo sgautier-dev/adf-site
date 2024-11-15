@@ -18,7 +18,7 @@ export default function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
 	return (
-		<header className="bg-black sticky top-0 z-20">
+		<header className="bg-white sticky top-0 z-20">
 			<nav
 				aria-label="Global"
 				className="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8"
@@ -29,7 +29,7 @@ export default function Header() {
 							<Link
 								key={item.name}
 								href={item.href}
-								className="text-sm/6 font-semibold text-white"
+								className="text-sm/6 font-semibold text-black"
 							>
 								{item.name}
 							</Link>
@@ -39,7 +39,7 @@ export default function Header() {
 						<button
 							type="button"
 							onClick={() => setMobileMenuOpen(true)}
-							className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+							className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-black"
 						>
 							<span className="sr-only">Open main menu</span>
 							<Bars3Icon aria-hidden="true" className="size-6" />
@@ -58,7 +58,7 @@ export default function Header() {
 					/>
 				</Link>
 				<div className="flex flex-1 justify-end">
-					<Link href="#" className="text-sm/6 font-semibold text-white">
+					<Link href="#" className="text-sm/6 font-semibold text-black">
 						Calendrier <span aria-hidden="true">&rarr;</span>
 					</Link>
 				</div>
@@ -69,13 +69,13 @@ export default function Header() {
 				className="lg:hidden"
 			>
 				<div className="fixed inset-0 z-20" />
-				<DialogPanel className="fixed inset-y-0 left-0 z-20 w-full overflow-y-auto bg-black p-3 lg:px-8">
+				<DialogPanel className="fixed inset-y-0 left-0 z-20 w-full overflow-y-auto bg-white p-3 lg:px-8">
 					<div className="flex items-center justify-between">
 						<div className="flex flex-1">
 							<button
 								type="button"
 								onClick={() => setMobileMenuOpen(false)}
-								className="-m-2.5 rounded-md p-2.5 text-white"
+								className="-m-2.5 rounded-md p-2.5 text-black"
 							>
 								<span className="sr-only">Close menu</span>
 								<XMarkIcon aria-hidden="true" className="size-6" />
@@ -93,7 +93,7 @@ export default function Header() {
 							/>
 						</Link>
 						<div className="flex flex-1 justify-end">
-							<Link href="#" className="text-sm/6 font-semibold text-white">
+							<Link href="#" className="text-sm/6 font-semibold text-black">
 								Calendrier <span aria-hidden="true">&rarr;</span>
 							</Link>
 						</div>
@@ -103,7 +103,7 @@ export default function Header() {
 							<Link
 								key={item.name}
 								href={item.href}
-								className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-gray-900"
+								className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-black hover:bg-gray-50"
 							>
 								{item.name}
 							</Link>
