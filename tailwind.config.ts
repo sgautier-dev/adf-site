@@ -15,6 +15,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        cadetBlue: '#4AA5AA',
       },
     },
   },
