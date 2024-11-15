@@ -6,6 +6,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 
 import adfLogo from "../../../public/images/logos/ADF-logo.png"
+import Link from "next/link"
 
 const navigation = [
 	{ name: "Initiations", href: "#" },
@@ -13,25 +14,25 @@ const navigation = [
 	{ name: "Contact", href: "#" },
 ]
 
-export default function Example() {
+export default function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
 	return (
-		<header className="bg-black animate-slide border-b sticky top-0 z-20">
+		<header className="bg-black animate-slide sticky top-0 z-20">
 			<nav
 				aria-label="Global"
-				className="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8"
+				className="mx-auto flex max-w-7xl items-center justify-between px-3 lg:px-8"
 			>
 				<div className="flex flex-1">
 					<div className="hidden lg:flex lg:gap-x-12">
 						{navigation.map((item) => (
-							<a
+							<Link
 								key={item.name}
 								href={item.href}
 								className="text-sm/6 font-semibold text-white"
 							>
 								{item.name}
-							</a>
+							</Link>
 						))}
 					</div>
 					<div className="flex lg:hidden">
@@ -45,21 +46,22 @@ export default function Example() {
 						</button>
 					</div>
 				</div>
-				<a href="#" className="-m-1.5 p-1.5">
+				<Link href="/" className="-m-1.5 p-1.5">
 					<span className="sr-only">Aqua Dance Flow</span>
 
 					<Image
-						alt=""
+						alt="aqua dance flow logo"
 						src={adfLogo}
 						className="h-20 w-auto"
 						height={700}
 						width={700}
+                        priority={true}
 					/>
-				</a>
+				</Link>
 				<div className="flex flex-1 justify-end">
-					<a href="#" className="text-sm/6 font-semibold text-white">
+					<Link href="#" className="text-sm/6 font-semibold text-white">
 						Calendrier <span aria-hidden="true">&rarr;</span>
-					</a>
+					</Link>
 				</div>
 			</nav>
 			<Dialog
@@ -67,8 +69,8 @@ export default function Example() {
 				onClose={setMobileMenuOpen}
 				className="lg:hidden"
 			>
-				<div className="fixed inset-0 z-10" />
-				<DialogPanel className="fixed inset-y-0 left-0 z-10 w-full overflow-y-auto bg-black px-6 py-6">
+				<div className="fixed inset-0 z-20" />
+				<DialogPanel className="fixed inset-y-0 left-0 z-20 w-full overflow-y-auto bg-black px-3 lg:px-8">
 					<div className="flex items-center justify-between">
 						<div className="flex flex-1">
 							<button
@@ -80,31 +82,32 @@ export default function Example() {
 								<XMarkIcon aria-hidden="true" className="size-6" />
 							</button>
 						</div>
-						<a href="#" className="-m-1.5 p-1.5">
+						<Link href="/" className="-m-1.5 p-1.5">
 							<span className="sr-only">Aqua Dance Flow</span>
 							<Image
-								alt=""
+								alt="aqua dance flow logo"
 								src={adfLogo}
 								className="h-20 w-auto"
 								height={700}
 								width={700}
+                                priority={true}
 							/>
-						</a>
+						</Link>
 						<div className="flex flex-1 justify-end">
-							<a href="#" className="text-sm/6 font-semibold text-white">
+							<Link href="#" className="text-sm/6 font-semibold text-white">
 								Calendrier <span aria-hidden="true">&rarr;</span>
-							</a>
+							</Link>
 						</div>
 					</div>
 					<div className="mt-6 space-y-2">
 						{navigation.map((item) => (
-							<a
+							<Link
 								key={item.name}
 								href={item.href}
 								className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-gray-900"
 							>
 								{item.name}
-							</a>
+							</Link>
 						))}
 					</div>
 				</DialogPanel>
