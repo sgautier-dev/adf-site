@@ -21,7 +21,7 @@ export default function Header() {
 		<header className="bg-black sticky top-0 z-20">
 			<nav
 				aria-label="Global"
-				className="mx-auto flex max-w-7xl items-center justify-between px-3 lg:px-8"
+				className="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8"
 			>
 				<div className="flex flex-1">
 					<div className="hidden lg:flex lg:gap-x-12">
@@ -48,14 +48,13 @@ export default function Header() {
 				</div>
 				<Link href="/" className="-m-1.5 p-1.5">
 					<span className="sr-only">Aqua Dance Flow</span>
-
 					<Image
 						alt="aqua dance flow logo"
 						src={adfLogo}
 						className="h-20 w-auto"
 						height={700}
 						width={700}
-                        priority={true}
+						priority={true}
 					/>
 				</Link>
 				<div className="flex flex-1 justify-end">
@@ -70,7 +69,7 @@ export default function Header() {
 				className="lg:hidden"
 			>
 				<div className="fixed inset-0 z-20" />
-				<DialogPanel className="fixed inset-y-0 left-0 z-20 w-full overflow-y-auto bg-black px-3 lg:px-8">
+				<DialogPanel className="fixed inset-y-0 left-0 z-20 w-full overflow-y-auto bg-black p-3 lg:px-8">
 					<div className="flex items-center justify-between">
 						<div className="flex flex-1">
 							<button
@@ -90,7 +89,7 @@ export default function Header() {
 								className="h-20 w-auto"
 								height={700}
 								width={700}
-                                priority={true}
+								priority={true}
 							/>
 						</Link>
 						<div className="flex flex-1 justify-end">
