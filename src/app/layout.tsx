@@ -16,7 +16,10 @@ const geistMono = localFont({
 })
 
 export const metadata: Metadata = {
-	title: "Aqua Dance Flow by Julie Gautier",
+	title: {
+		template: "%s - Aqua Dance Flow by Julie Gautier",
+		default: "Aqua Dance Flow by Julie Gautier",
+	},
 	description:
 		"L'Aqua Dance Flow, danse aquatique, est une discipline à la croisée de l’Art et du Sport.",
 	authors: [{ name: "Sébastien Gautier", url: "https://www.sgautier.dev" }],
