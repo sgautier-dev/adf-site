@@ -1,5 +1,6 @@
 import Image from "next/image"
 import storyImg from "../../../public/images/story.png"
+import Link from "next/link"
 export default function Story() {
 	return (
 		<div className="relative bg-white">
@@ -29,12 +30,12 @@ export default function Story() {
 								au-delà du simple savoir-nager et de l&apos;apnée.
 							</p>
 							<div className="mt-10 flex items-center gap-x-6">
-								<a
+								<Link
 									href="#"
-									className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+									className="rounded-md bg-cadetBlue px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cadetBlue/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cadetBlue/80"
 								>
-									Get started
-								</a>
+									Participer à une initiation
+								</Link>
 							</div>
 						</div>
 					</div>

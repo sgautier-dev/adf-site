@@ -31,10 +31,21 @@ export default {
 						transform: "translateX(0%)",
 					},
 				},
+				translate: {
+					from: {
+						transform: "translateY(20%)",
+						opacity: "0"
+					},
+					to: {
+						transform: "translateY(0)",
+						opacity: "1"
+					},
+				},
 			},
 			animation: {
 				appear: "appear 1s ease-in-out",
 				slide: "slide 750ms ease-in-out",
+				translate: "translate 2s ease-in-out forwards",
 			},
 			fontFamily: {
 				quicksand: ["var(--font-quicksand)"],
