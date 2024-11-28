@@ -1,6 +1,8 @@
+import Image from "next/image"
+import storyImg from "../../../public/images/story.png"
 export default function Story() {
 	return (
-		<div className="relative">
+		<div className="relative bg-white">
 			<div className="mx-auto max-w-7xl">
 				<div className="relative z-10 pt-14 lg:w-full lg:max-w-2xl">
 					<svg
@@ -12,27 +14,19 @@ export default function Story() {
 						<polygon points="0,0 90,0 50,100 0,100" />
 					</svg>
 
-					<div className="relative px-6 py-32 sm:py-40 lg:px-8 lg:py-56 lg:pr-0">
+					<div className="relative px-6 py-12 sm:py-24 lg:px-8 lg:py-32 lg:pr-0">
 						<div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-							<div className="hidden sm:mb-10 sm:flex">
-								<div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-									Anim aute id magna aliqua ad ad non deserunt sunt.{" "}
-									<a
-										href="#"
-										className="whitespace-nowrap font-semibold text-indigo-600"
-									>
-										<span aria-hidden="true" className="absolute inset-0" />
-										Read more <span aria-hidden="true">&rarr;</span>
-									</a>
-								</div>
-							</div>
-							<h1 className="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
-								Data to enrich your business
+							<h1 className="font-leagueSpartan text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
+								DANSE SUBAQUATIQUE
 							</h1>
 							<p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
-								Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-								lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-								fugiat aliqua.
+								Aqua Dance Flow (ADF) est une nouvelle discipline sportive et
+								artistique inspirée par l&apos;œuvre AMA, créée par Julie
+								Gautier. Ce mode d&apos;expression artistique offre une nouvelle
+								manière de pratiquer l&apos;apnée : courir, sauter, voler et
+								danser sous l&apos;eau. Née de la vision unique de Julie
+								Gautier, ADF ouvre un nouvel horizon artistique à la natation,
+								au-delà du simple savoir-nager et de l&apos;apnée.
 							</p>
 							<div className="mt-10 flex items-center gap-x-6">
 								<a
@@ -41,19 +35,18 @@ export default function Story() {
 								>
 									Get started
 								</a>
-								<a href="#" className="text-sm/6 font-semibold text-gray-900">
-									Learn more <span aria-hidden="true">→</span>
-								</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-				<img
-					alt=""
-					src="https://images.unsplash.com/photo-1483389127117-b6a2102724ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80"
+			<div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 flex justify-center">
+				<Image
+					alt="story julie gautier aqua dance flow"
+					src={storyImg}
 					className="aspect-[3/2] object-cover lg:aspect-auto lg:size-full"
+					width={700}
+					height={700}
 				/>
 			</div>
 		</div>
