@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Dialog, DialogPanel } from "@headlessui/react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
@@ -11,9 +11,25 @@ import { menu } from "@/app/lib/navigation"
 
 export default function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+	const [isAtTop, setIsAtTop] = useState(true)
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setIsAtTop(window.scrollY === 0)
+		}
+
+		window.addEventListener("scroll", handleScroll)
+
+		// Clean up on component unmount
+		return () => {
+			window.removeEventListener("scroll", handleScroll)
+		}
+	}, [])
 
 	return (
-		<header className="bg-white sticky top-0 z-20">
+		<header className={`sticky top-0 z-20 bg-white transition-opacity duration-300 ${
+			isAtTop ? '' : 'bg-opacity-90'
+		  }`}>
 			<nav
 				aria-label="Global"
 				className="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8"
