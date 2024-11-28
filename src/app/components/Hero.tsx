@@ -28,7 +28,7 @@ export default function Hero() {
 						>
 							Participer à une initiation
 						</Link>
-						<Link href="/story" className="text-sm/6 font-semibold text-white">
+						<Link href="/story" className="text-sm/6 font-semibold text-white hover:scale-110 transition">
 							L&apos;histoire <span aria-hidden="true">→</span>
 						</Link>
 					</div>

@@ -24,7 +24,7 @@ export default function Header() {
 							<Link
 								key={item.name}
 								href={item.href}
-								className="text-sm/6 font-semibold text-black"
+								className="text-sm/6 font-semibold text-black hover:scale-110 transition"
 							>
 								{item.name}
 							</Link>
@@ -53,7 +53,10 @@ export default function Header() {
 					/>
 				</Link>
 				<div className="flex flex-1 justify-end">
-					<Link href="#" className="text-sm/6 font-semibold text-black">
+					<Link
+						href="#"
+						className="text-sm/6 font-semibold text-black hover:scale-110 transition"
+					>
 						Calendrier <span aria-hidden="true">&rarr;</span>
 					</Link>
 				</div>
@@ -64,7 +67,7 @@ export default function Header() {
 				className="lg:hidden"
 			>
 				<div className="fixed inset-0 z-20" />
-				<DialogPanel className="fixed inset-y-0 left-0 z-20 w-full overflow-y-auto bg-white p-3 lg:px-8">
+				<DialogPanel className="fixed inset-y-0 left-0 z-20 w-full overflow-y-auto bg-white p-3 lg:px-8 animate-slide">
 					<div className="flex items-center justify-between">
 						<div className="flex flex-1">
 							<button
@@ -76,7 +79,11 @@ export default function Header() {
 								<XMarkIcon aria-hidden="true" className="size-6" />
 							</button>
 						</div>
-						<Link href="/" className="-m-1.5 p-1.5">
+						<Link
+							href="/"
+							className="-m-1.5 p-1.5"
+							onClick={() => setMobileMenuOpen(false)}
+						>
 							<span className="sr-only">Aqua Dance Flow</span>
 							<Image
 								alt="aqua dance flow logo"
@@ -88,7 +95,11 @@ export default function Header() {
 							/>
 						</Link>
 						<div className="flex flex-1 justify-end">
-							<Link href="#" className="text-sm/6 font-semibold text-black">
+							<Link
+								href="#"
+								className="text-sm/6 font-semibold text-black hover:scale-110 transition"
+								onClick={() => setMobileMenuOpen(false)}
+							>
 								Calendrier <span aria-hidden="true">&rarr;</span>
 							</Link>
 						</div>
@@ -99,6 +110,7 @@ export default function Header() {
 								key={item.name}
 								href={item.href}
 								className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-black hover:bg-gray-50"
+								onClick={() => setMobileMenuOpen(false)}
 							>
 								{item.name}
 							</Link>

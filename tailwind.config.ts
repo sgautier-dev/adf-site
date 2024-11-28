@@ -26,26 +26,34 @@ export default {
 				slide: {
 					from: {
 						transform: "translateX(100%)",
+						opacity: "0",
 					},
 					to: {
 						transform: "translateX(0%)",
+						opacity: "1",
 					},
 				},
 				translate: {
 					from: {
 						transform: "translateY(20%)",
-						opacity: "0"
+						opacity: "0",
 					},
 					to: {
 						transform: "translateY(0)",
-						opacity: "1"
+						opacity: "1",
 					},
+				},
+				"open-menu": {
+					"0%": { transform: "scaleY(0)" },
+					"80%": { transform: "scaleY(1.2)" },
+					"100%": { transform: "scale(1)" },
 				},
 			},
 			animation: {
 				appear: "appear 1s ease-in-out",
 				slide: "slide 750ms ease-in-out",
 				translate: "translate 2s ease-in-out forwards",
+				"open-menu": "open-menu 1s ease-in-out forwards",
 			},
 			fontFamily: {
 				quicksand: ["var(--font-quicksand)"],
