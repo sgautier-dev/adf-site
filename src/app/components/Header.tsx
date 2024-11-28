@@ -7,12 +7,7 @@ import Image from "next/image"
 
 import adfLogo from "../../../public/images/logos/ADF-logo.png"
 import Link from "next/link"
-
-const navigation = [
-	{ name: "Initiations", href: "#" },
-	{ name: "Histoire", href: "#" },
-	{ name: "Contact", href: "#" },
-]
+import { menu } from "@/app/lib/navigation"
 
 export default function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -25,7 +20,7 @@ export default function Header() {
 			>
 				<div className="flex flex-1">
 					<div className="hidden lg:flex lg:gap-x-12">
-						{navigation.map((item) => (
+						{menu.map((item) => (
 							<Link
 								key={item.name}
 								href={item.href}
@@ -99,7 +94,7 @@ export default function Header() {
 						</div>
 					</div>
 					<div className="mt-6 space-y-2">
-						{navigation.map((item) => (
+						{menu.map((item) => (
 							<Link
 								key={item.name}
 								href={item.href}
