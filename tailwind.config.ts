@@ -33,8 +33,12 @@ export default {
 				},
 			},
 			animation: {
-				"appear": "appear 1s ease-in-out",
-				"slide": "slide 750ms ease-in-out",
+				appear: "appear 1s ease-in-out",
+				slide: "slide 750ms ease-in-out",
+			},
+			fontFamily: {
+				quicksand: ["var(--font-quicksand)"],
+				leagueSpartan: ["var(--font-leagueSpartan)"],
 			},
 		},
 	},

@@ -1,5 +1,6 @@
 "use client"
 
+import Script from "next/script"
 import { FormEvent, useEffect, useState } from "react"
 import { BellAlertIcon } from "@heroicons/react/24/outline"
 import { ExclamationTriangleIcon } from "@heroicons/react/24/solid"
@@ -122,6 +123,9 @@ export default function UnderConstruct() {
 						<p className="mt-4 text-center text-sm text-amber-500">{message}</p>
 					)}
 				</form>
+				<Script
+					src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+				/>
 
 				<svg
 					viewBox="0 0 1024 1024"

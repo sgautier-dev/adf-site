@@ -3,6 +3,19 @@ import localFont from "next/font/local"
 import "./globals.css"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import { Quicksand, League_Spartan } from "next/font/google"
+
+const quicksand = Quicksand({
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-quicksand",
+})
+
+const leagueSpartan = League_Spartan({
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-leagueSpartan",
+})
 
 const geistSans = localFont({
 	src: "./fonts/GeistVF.woff",
@@ -33,7 +46,7 @@ export default function RootLayout({
 	return (
 		<html lang="fr">
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black mx-auto w-full max-w-7xl`}
+				className={`${geistSans.variable} ${geistMono.variable} ${quicksand.variable} ${leagueSpartan.variable} antialiased bg-black mx-auto w-full max-w-7xl`}
 			>
 				<div className="lg:px-4">
 					<Header />
