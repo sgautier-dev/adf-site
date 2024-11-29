@@ -1,6 +1,6 @@
 export const menu = [
     { name: "Histoire", href: "/story" },
-	{ name: "Initiations", href: "#" },
+	{ name: "Expériences", href: "/experiences" },
 	{ name: "Contact", href: "#" },
 ]
 

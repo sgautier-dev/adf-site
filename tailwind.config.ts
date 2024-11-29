@@ -17,6 +17,7 @@ export default {
 				background: "var(--background)",
 				foreground: "var(--foreground)",
 				cadetBlue: "#4AA5AA",
+				paleRed: "#EC73A2",
 			},
 			keyframes: {
 				appear: {
