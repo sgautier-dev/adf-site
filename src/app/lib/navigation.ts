@@ -7,5 +7,5 @@ export const menu = [
 export const legal = [
 	{ name: "Confidentialité", href: "#" },
 	{ name: "Mentions légales", href: "#" },
-	{ name: "CGV", href: "#" },
+	// { name: "CGV", href: "#" },
 ]

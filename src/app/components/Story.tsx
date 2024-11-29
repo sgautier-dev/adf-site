@@ -31,7 +31,7 @@ export default function Story() {
 							</p>
 							<div className="mt-10 flex items-center gap-x-6">
 								<Link
-									href="#"
+									href="/experiences"
 									className="rounded-md bg-cadetBlue px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cadetBlue/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cadetBlue/80"
 								>
 									Participer à une initiation
@@ -41,7 +41,7 @@ export default function Story() {
 					</div>
 				</div>
 			</div>
-			<div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 flex justify-center">
+			<div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 flex justify-center pb-14 lg:pb-0">
 				<Image
 					alt="story julie gautier aqua dance flow"
 					src={storyImg}

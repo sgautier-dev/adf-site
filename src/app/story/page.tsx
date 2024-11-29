@@ -1,3 +1,4 @@
+import Quote from "../components/Quote"
 import Story from "../components/Story"
 
 export const metadata = {
@@ -8,6 +9,7 @@ export default function StoryPage() {
 	return (
 		<main className="flex flex-col justify-center text-center max-w-7xl mx-auto">
 			<Story />
+			<Quote />
 		</main>
 	)
 }
