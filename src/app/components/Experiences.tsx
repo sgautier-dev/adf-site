@@ -117,7 +117,7 @@ export default function Experiences() {
 							</div>
 							<div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
 								<div className="relative">
-								<Image
+									<Image
 										alt="expériences aqua dance flow"
 										src={image2}
 										className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
@@ -127,7 +127,7 @@ export default function Experiences() {
 									<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 								</div>
 								<div className="relative">
-                <Image
+									<Image
 										alt="expériences aqua dance flow"
 										src={image4}
 										className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
@@ -139,7 +139,7 @@ export default function Experiences() {
 							</div>
 							<div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
 								<div className="relative">
-                <Image
+									<Image
 										alt="expériences aqua dance flow"
 										src={image3}
 										className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
@@ -149,7 +149,7 @@ export default function Experiences() {
 									<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 								</div>
 								<div className="relative">
-                <Image
+									<Image
 										alt="expériences aqua dance flow"
 										src={image5}
 										className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"

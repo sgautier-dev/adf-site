@@ -1,7 +1,7 @@
 export const menu = [
     { name: "Histoire", href: "/story" },
 	{ name: "Expériences", href: "/experiences" },
-	{ name: "Contact", href: "#" },
+	{ name: "Contact", href: "/contact" },
 ]
 
 export const legal = [

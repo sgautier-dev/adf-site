@@ -2,7 +2,7 @@ import Experiences from "../components/Experiences"
 import Quote from "../components/Quote"
 
 export const metadata = {
-	title: "L'histoire",
+	title: "Expériences",
 }
 
 export default function ExperiencesPage() {
