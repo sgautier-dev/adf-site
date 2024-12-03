@@ -4,7 +4,6 @@ import Image from "next/image"
 import sendEmail from "@/app/actions/sendEmail"
 import { useAction } from "next-safe-action/hooks"
 import { DisplayServerActionResponse } from "./DisplayServerActionResponse"
-import Script from "next/script"
 import contact from "../../../public/images/contact.png"
 
 export default function Contact() {
@@ -229,9 +228,6 @@ export default function Contact() {
 						</form>
 						<DisplayServerActionResponse result={result} />
 					</div>
-					<Script
-						src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-					/>
 				</div>
 			</div>
 		</div>

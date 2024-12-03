@@ -2,6 +2,8 @@ import Link from "next/link"
 import adfLogo from "../../../public/images/logos/ADF-logo.png"
 import Image from "next/image"
 import { legal, menu } from "@/app/lib/navigation"
+import Newsletter from "./Newsletter"
+import Script from "next/script"
 
 const social = [
 	// {
@@ -117,7 +119,8 @@ export default function Footer() {
 						</div>
 					</div>
 				</div>
-				<div className="flex space-x-6 text-sm/6 text-gray-600 mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
+				<Newsletter />
+				<div className="flex space-x-6 text-sm/6 text-gray-600 mt-12 border-t border-gray-900/1 pt-8 sm:mt-16 lg:mt-20">
 					<p>
 						Copyright &copy; {new Date().getFullYear()} Aqua Dance Flow.{" "}
 						<span className=" text-nowrap">Tous droits réservés.</span>
@@ -127,6 +130,9 @@ export default function Footer() {
 					</a>
 				</div>
 			</div>
+			<Script
+				src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+			/>
 		</footer>
 	)
 }

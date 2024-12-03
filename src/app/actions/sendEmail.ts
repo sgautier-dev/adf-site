@@ -3,11 +3,8 @@ import React from "react"
 import { EmailTemplate } from "@/app/components/EmailTemplate"
 import { Resend } from "resend"
 import { z } from "zod"
-
-import {
-	flattenValidationErrors,
-	createSafeActionClient,
-} from "next-safe-action"
+import { actionClient } from "../lib/safe-action"
+import { flattenValidationErrors } from "next-safe-action"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -18,8 +15,6 @@ const schema = z.object({
 	phone: z.string().optional(),
 	message: z.string().min(1, { message: "Le message est requis." }),
 })
-
-export const actionClient = createSafeActionClient()
 
 const sendEmail = actionClient
 	.schema(schema, {
