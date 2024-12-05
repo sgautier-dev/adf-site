@@ -108,15 +108,15 @@ export default function Contact() {
 							<div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
 								<div>
 									<label
-										htmlFor="first-name"
+										htmlFor="firstName"
 										className="block text-sm/6 font-semibold text-gray-900"
 									>
 										Prénom
 									</label>
 									<div className="mt-2.5">
 										<input
-											id="first-name"
-											name="first-name"
+											id="firstName"
+											name="firstName"
 											type="text"
 											autoComplete="given-name"
 											value={formData.firstName}
@@ -128,15 +128,15 @@ export default function Contact() {
 								</div>
 								<div>
 									<label
-										htmlFor="last-name"
+										htmlFor="lastName"
 										className="block text-sm/6 font-semibold text-gray-900"
 									>
 										Nom
 									</label>
 									<div className="mt-2.5">
 										<input
-											id="last-name"
-											name="last-name"
+											id="lastName"
+											name="lastName"
 											type="text"
 											autoComplete="family-name"
 											value={formData.lastName}
