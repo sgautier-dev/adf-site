@@ -1,16 +1,20 @@
-import Link from "next/link";
+import Link from "next/link"
 
 export default function Hero() {
 	return (
 		<div className="mx-auto sm:px-6 lg:px-8">
 			<div className="relative isolate overflow-hidden bg-gray-900/80 px-3 py-24 shadow-2xl sm:rounded-3xl sm:px-24 xl:py-32 animate-translate">
 				<div className="hidden sm:mb-8 sm:flex sm:justify-center">
-					<div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
-						Julie Gautier s&apos;associe à la marque Cressi pour lancer ADF.{" "}
-						<Link href="#" className="font-semibold text-white">
+					<div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-paleRed hover:ring-paleRed/30">
+						Julie Gautier sera présente au Salon de la Plongée 9-12 Jan 2025.{" "}
+						<a
+							href="https://www.salon-de-la-plongee.com/fr/animations/fiche-animations/2051/3714.html"
+							target="_blank"
+							className="font-semibold text-white"
+						>
 							<span aria-hidden="true" className="absolute inset-0" />
 							En savoir plus <span aria-hidden="true">&rarr;</span>
-						</Link>
+						</a>
 					</div>
 				</div>
 				<div className="text-center">
@@ -28,7 +32,10 @@ export default function Hero() {
 						>
 							Participer à une initiation
 						</Link>
-						<Link href="/story" className="text-sm/6 font-semibold text-white hover:scale-110 transition">
+						<Link
+							href="/story"
+							className="text-sm/6 font-semibold text-white hover:scale-110 transition"
+						>
 							L&apos;histoire <span aria-hidden="true">→</span>
 						</Link>
 					</div>
