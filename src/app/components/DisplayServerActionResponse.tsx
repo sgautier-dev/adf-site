@@ -55,7 +55,7 @@ export function DisplayServerActionResponse({ result }: Props) {
 					show={showServerError}
 					onClose={() => setShowServerError(false)}
 					title="Erreur serveur"
-					message={`Veuillez réessayer plus tard. (${serverError})`}
+					message={`Veuillez réessayer plus tard.`}
 					variant="error"
 				/>
 			)}
@@ -65,7 +65,7 @@ export function DisplayServerActionResponse({ result }: Props) {
 					show={showFetchError}
 					onClose={() => setShowFetchError(false)}
 					title="Erreur réseau"
-					message={`Vérifiez votre connexion. (${fetchError})`}
+					message={`Vérifiez votre connexion.`}
 					variant="error"
 				/>
 			)}
