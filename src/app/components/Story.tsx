@@ -36,6 +36,13 @@ export default function Story() {
 								>
 									Participer à une initiation
 								</Link>
+								<a
+									href="https://youtu.be/EdDupIIjyjE?si=SIzeIPVSQ4_hLj0Z"
+									target="_blank"
+									className="text-sm/6 font-semibold text-gray-900"
+								>
+									Voir AMA <span aria-hidden="true">→</span>
+								</a>
 							</div>
 						</div>
 					</div>
