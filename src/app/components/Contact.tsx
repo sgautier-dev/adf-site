@@ -5,6 +5,7 @@ import sendEmail from "@/app/actions/sendEmail"
 import { useAction } from "next-safe-action/hooks"
 import { DisplayServerActionResponse } from "./DisplayServerActionResponse"
 import contact from "../../../public/images/contact.png"
+import { ArrowPathIcon } from "@heroicons/react/24/outline"
 
 export default function Contact() {
 	const [formData, setFormData] = useState({
@@ -222,7 +223,7 @@ export default function Contact() {
 									type="submit"
 									className="rounded-md bg-cadetBlue px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-cadetBlue/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cadetBlue"
 								>
-									{isExecuting ? "En cours..." : "Envoyer"}
+									{isExecuting ? <ArrowPathIcon className="h-5 w-5 animate-spin" /> : "Envoyer"}
 								</button>
 							</div>
 						</form>

@@ -1,4 +1,5 @@
-import { ExclamationTriangleIcon } from "@heroicons/react/24/solid"
+import Notification from "./Notification" // Adjust path
+import { useState, useEffect } from "react"
 
 type Props = {
 	result: {
@@ -14,46 +15,79 @@ type Props = {
 export function DisplayServerActionResponse({ result }: Props) {
 	const { data, serverError, fetchError, validationErrors } = result
 
+	const [showSuccess, setShowSuccess] = useState(!!data?.message)
+	const [showServerError, setShowServerError] = useState(!!serverError)
+	const [showFetchError, setShowFetchError] = useState(!!fetchError)
+	const [showValidationErrors, setShowValidationErrors] = useState(true) // show if we have any
+
+	useEffect(() => {
+		setShowSuccess(!!data?.message)
+	}, [data])
+
+	useEffect(() => {
+		setShowServerError(!!serverError)
+	}, [serverError])
+
+	useEffect(() => {
+		setShowFetchError(!!fetchError)
+	}, [fetchError])
+
+	useEffect(() => {
+		setShowValidationErrors(
+			!!validationErrors && Object.keys(validationErrors).length > 0
+		)
+	}, [validationErrors])
+
 	return (
-		<div className="mx-auto mt-3 max-w-xl sm:mt-4">
-			{/* Success Message */}
-			{data?.message ? (
-				<h2 className="my-2 text-xl text-amber-500 font-semibold">
-					{data.message}
-				</h2>
-			) : null}
+		<>
+			{data?.message && (
+				<Notification
+					show={showSuccess}
+					onClose={() => setShowSuccess(false)}
+					title="Succès !"
+					message={data.message}
+					variant="success"
+				/>
+			)}
 
-			{serverError ? (
-				<div className="my-2 flex items-center gap-1 text-red-500">
-					<ExclamationTriangleIcon className="h-8 w-8" aria-hidden="true" />
-					<p>
-						Erreur serveur, veuillez réessayer plus tard.{" "}
-						<span className="italic">({serverError})</span>
-					</p>
-				</div>
-			) : null}
+			{serverError && (
+				<Notification
+					show={showServerError}
+					onClose={() => setShowServerError(false)}
+					title="Erreur serveur"
+					message={`Veuillez réessayer plus tard. (${serverError})`}
+					variant="error"
+				/>
+			)}
 
-			{fetchError ? (
-				<div className="my-2 flex items-center gap-1 text-red-500">
-					<ExclamationTriangleIcon className="h-8 w-8" aria-hidden="true" />
-					<p>
-						Erreur de récupération, veuillez vérifier votre connexion.{" "}
-						<span className="italic">({fetchError})</span>
-					</p>
-				</div>
-			) : null}
+			{fetchError && (
+				<Notification
+					show={showFetchError}
+					onClose={() => setShowFetchError(false)}
+					title="Erreur réseau"
+					message={`Vérifiez votre connexion. (${fetchError})`}
+					variant="error"
+				/>
+			)}
 
-			{validationErrors ? (
-				<div className="my-2 flex items-center gap-1 text-red-500">
-					<ExclamationTriangleIcon className="h-8 w-8" aria-hidden="true" />
-					{Object.keys(validationErrors).map((key) => (
-						<p key={key}>{`${key}: ${
-							validationErrors &&
-							validationErrors[key as keyof typeof validationErrors]
-						}`}</p>
-					))}
-				</div>
-			) : null}
-		</div>
+			{validationErrors &&
+				showValidationErrors &&
+				Object.keys(validationErrors).map((key) => {
+					const errors = validationErrors[key]
+					return (
+						<Notification
+							key={key}
+							show={true}
+							onClose={() => {
+								// For now, just hide them all.
+								setShowValidationErrors(false)
+							}}
+							title="Erreur de validation"
+							message={`${key}: ${errors?.join(", ")}`}
+							variant="error"
+						/>
+					)
+				})}
+		</>
 	)
 }

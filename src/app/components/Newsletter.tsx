@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useState } from "react"
 import useRecaptcha from "../lib/hooks/useRecaptcha"
 import { validateEmail } from "../lib/utils"
+import { ArrowPathIcon } from "@heroicons/react/24/outline"
 
 export default function Newsletter() {
 	const [email, setEmail] = useState("")
@@ -107,7 +108,11 @@ export default function Newsletter() {
 							disabled={isSubmitting}
 							className="flex w-full items-center justify-center rounded-md bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-900/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
 						>
-							{isSubmitting ? "Envoi en cours..." : "S'inscrire"}
+							{isSubmitting ? (
+								<ArrowPathIcon className="h-5 w-5 animate-spin" />
+							) : (
+								"S'inscrire"
+							)}
 						</button>
 					</div>
 				</form>

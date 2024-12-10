@@ -40,7 +40,7 @@ const sendEmail = actionClient
 			})
 
 			return {
-				message: "Envoyé avec succès !",
+				message: "Votre message bien été envoyé.",
 			}
 		}
 	)
