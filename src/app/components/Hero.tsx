@@ -10,6 +10,7 @@ export default function Hero() {
 						<a
 							href="https://www.salon-de-la-plongee.com/fr/animations/fiche-animations/2051/3714.html"
 							target="_blank"
+							rel="noopener noreferrer"
 							className="font-semibold text-white"
 						>
 							<span aria-hidden="true" className="absolute inset-0" />

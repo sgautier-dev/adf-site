@@ -39,6 +39,7 @@ export default function Story() {
 								<a
 									href="https://youtu.be/EdDupIIjyjE?si=SIzeIPVSQ4_hLj0Z"
 									target="_blank"
+									rel="noopener noreferrer"
 									className="text-sm/6 font-semibold text-gray-900"
 								>
 									Voir AMA <span aria-hidden="true">→</span>
