@@ -73,7 +73,7 @@ export default function Header() {
 						href="#"
 						className="text-sm/6 font-semibold text-black hover:scale-110 transition"
 					>
-						Calendrier <span aria-hidden="true">&rarr;</span>
+						Événements <span aria-hidden="true">&rarr;</span>
 					</Link>
 				</div>
 			</nav>

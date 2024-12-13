@@ -2,7 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import image1 from "../../../public/images/experiences-1.jpg"
 import image2 from "../../../public/images/experiences-2.png"
-import image3 from "../../../public/images/experiences-3.png"
+import image3 from "../../../public/images/experiences-3.jpg"
 import image4 from "../../../public/images/experiences-4.jpg"
 import image5 from "../../../public/images/experiences-5.jpg"
 
@@ -95,7 +95,7 @@ export default function Experiences() {
 									href="#"
 									className="rounded-md bg-cadetBlue px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cadetBlue/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cadetBlue/80"
 								>
-									Voir le calendrier
+									Nos expériences à venir
 								</Link>
 								{/* <a href="#" className="text-sm/6 font-semibold text-gray-900">
 									Live demo <span aria-hidden="true">→</span>
@@ -109,8 +109,8 @@ export default function Experiences() {
 										alt="expériences aqua dance flow"
 										src={image1}
 										className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-										width={640}
-										height={960}
+										width={700}
+										height={700}
 									/>
 									<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 								</div>
@@ -131,8 +131,8 @@ export default function Experiences() {
 										alt="expériences aqua dance flow"
 										src={image4}
 										className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-										width={640}
-										height={427}
+										width={700}
+										height={1050}
 									/>
 									<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 								</div>
@@ -141,17 +141,17 @@ export default function Experiences() {
 								<div className="relative">
 									<Image
 										alt="expériences aqua dance flow"
-										src={image3}
+										src={image5}
 										className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										width={700}
-										height={700}
+										height={467}
 									/>
 									<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 								</div>
 								<div className="relative">
 									<Image
 										alt="expériences aqua dance flow"
-										src={image5}
+										src={image3}
 										className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
 										width={640}
 										height={960}
