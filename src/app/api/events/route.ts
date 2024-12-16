@@ -38,6 +38,11 @@ interface EventbriteEvent {
 	ticket_availability?: {
 		is_sold_out?: boolean
 	}
+	venue?: {
+		address?: {
+			city?: string
+		}
+	}
 }
 
 export async function GET() {
@@ -51,7 +56,7 @@ export async function GET() {
 		)
 	}
 
-	const url = `https://www.eventbriteapi.com/v3/organizations/${organizationId}/events/?expand=logo,ticket_availability`
+	const url = `https://www.eventbriteapi.com/v3/organizations/${organizationId}/events/?expand=logo,venue,ticket_availability`
 
 	const res = await fetch(url, {
 		headers: {
@@ -69,27 +74,32 @@ export async function GET() {
 
 	const data = await res.json()
 
-	const events: ReturnedEvent[] = (data.events || []).map((event: EventbriteEvent) => {
-		const name = event.name?.text || ""
-		const summary = event.description?.text || ""
-		const startLocal = event.start?.local || ""
-		const endLocal = event.end?.local || ""
-		const formattedDate =
-			startLocal && endLocal ? formatEventDateTime(startLocal, endLocal) : ""
+	const events: ReturnedEvent[] = (data.events || []).map(
+		(event: EventbriteEvent) => {
+			const name = event.name?.text || ""
+			const summary = event.description?.text || ""
+			const startLocal = event.start?.local || ""
+			const endLocal = event.end?.local || ""
+			const formattedDate =
+				startLocal && endLocal ? formatEventDateTime(startLocal, endLocal) : ""
+			const isSoldOut = event.ticket_availability?.is_sold_out
+			const city = event.venue?.address?.city || ""
+			// const bookingInfo = isSoldOut ? "Complet" : "Places disponibles"
 
-		const isSoldOut = event.ticket_availability?.is_sold_out
-		// const bookingInfo = isSoldOut ? "Complet" : "Places disponibles"
+			console.log("event venue", event.venue)
 
-		return {
-			id: event.id,
-			name,
-			summary,
-			date: formattedDate,
-			imageUrl: event.logo?.url || null,
-			url: event.url || "",
-			isSoldOut,
+			return {
+				id: event.id,
+				name,
+				summary,
+				date: formattedDate,
+				imageUrl: event.logo?.url || null,
+				url: event.url || "",
+				isSoldOut,
+				city,
+			}
 		}
-	})
-    // console.log("events: ", events)
+	)
+	// console.log("events: ", events)
 	return NextResponse.json(events)
 }

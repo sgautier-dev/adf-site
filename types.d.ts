@@ -10,4 +10,5 @@ interface ReturnedEvent {
 	imageUrl: string | null
 	url: string
 	isSoldOut: boolean
+	city: string
 }
