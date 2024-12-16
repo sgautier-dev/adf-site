@@ -1,5 +1,3 @@
-"use cache"
-
 import { NextResponse } from "next/server"
 
 function formatEventDateTime(startISO: string, endISO: string): string {
