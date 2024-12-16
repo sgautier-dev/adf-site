@@ -6,7 +6,7 @@ Revalidate route: Triggered by a Eventbrite webhook.
 It retrieves tag and secret from the search params. 
 Revalidate on demand the provided tag.
 */
-export async function GET(request: NextRequest) {
+export async function POST(request: NextRequest) {
 	// to use with a webhook: http://localhost:3000/api/revalidate?tag=xxxx&secret=xxxxx
 	const tag = request.nextUrl.searchParams.get("tag")
 	const secret = request.nextUrl.searchParams.get("secret")
