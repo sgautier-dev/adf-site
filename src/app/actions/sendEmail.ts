@@ -5,6 +5,7 @@ import { Resend } from "resend"
 import { z } from "zod"
 import { actionClient } from "../lib/safe-action"
 import { flattenValidationErrors } from "next-safe-action"
+import arcjet, { shield, detectBot, fixedWindow, request } from "@arcjet/next"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -16,6 +17,24 @@ const schema = z.object({
 	message: z.string().min(1, { message: "Le message est requis." }),
 })
 
+const aj = arcjet({
+	key: process.env.ARCJET_KEY!,
+	rules: [
+		shield({
+			mode: "LIVE",
+		}),
+		detectBot({
+			mode: "LIVE",
+			allow: [],
+		}),
+		fixedWindow({
+			mode: "LIVE",
+			window: "1m",
+			max: 5,
+		}),
+	],
+})
+
 const sendEmail = actionClient
 	.schema(schema, {
 		handleValidationErrorsShape: (ve) =>
@@ -24,6 +43,21 @@ const sendEmail = actionClient
 	.action(
 		async ({ parsedInput: { firstName, lastName, email, phone, message } }) => {
 			// throw new Error ('test')
+
+			const req = await request()
+			const decision = await aj.protect(req)
+
+			if (decision.isDenied()) {
+				if (decision.reason.isRateLimit()) {
+					throw new Error(
+						"Trop de tentatives d'envois. Veuillez réessayer plus tard."
+					)
+				}
+				if (decision.reason.isBot()) {
+					throw new Error("Vous êtes un bot. Veuillez vous en aller.")
+				}
+				throw new Error("Une erreur s'est produite.")
+			}
 
 			await resend.emails.send({
 				from: "ADF Contact <contact@aquadanceflow.com>",
