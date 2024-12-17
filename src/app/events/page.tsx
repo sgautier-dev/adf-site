@@ -4,7 +4,9 @@ export const metadata = {
 	title: "Événements",
 }
 export default async function EventsPage() {
-	const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/events`)
+	const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/events`, {
+		cache: "force-cache", // Cache the response
+	})
 	const events = await res.json()
 
 	return (

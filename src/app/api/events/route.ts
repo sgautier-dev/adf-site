@@ -72,8 +72,6 @@ export async function GET() {
 			headers: {
 				Authorization: `Bearer ${token}`,
 			},
-			cache: "force-cache",
-			next: { tags: ["events"] },
 		})
 
 		if (!res.ok) {

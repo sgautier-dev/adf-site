@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { revalidateTag } from "next/cache"
+import { revalidatePath } from "next/cache"
 
 /*
 Revalidate route: Triggered by a Eventbrite webhook. 
@@ -7,28 +7,26 @@ It retrieves tag and secret from the search params.
 Revalidate on demand the provided tag.
 */
 export async function POST(request: NextRequest) {
-	// to use with a webhook: http://localhost:3000/api/revalidate?tag=xxxx&secret=xxxxx
-	const tag = request.nextUrl.searchParams.get("tag")
 	const secret = request.nextUrl.searchParams.get("secret")
 
-	if (secret !== process.env.REVALIDATE_TOKEN || !tag) {
+	// Security check
+	if (secret !== process.env.REVALIDATE_TOKEN) {
 		return NextResponse.json(
-			{
-				message: "Invalid revalidation params !",
-			},
+			{ message: "Invalid revalidation token!" },
 			{ status: 401 }
 		)
 	}
 
 	try {
-		revalidateTag(tag)
+		// Revalidate the entire /events path
+		console.log("Revalidating path: /events")
+		revalidatePath("/events") // Specify the route you want to revalidate
+
 		return NextResponse.json({ revalidated: true, now: Date.now() })
 	} catch (err) {
-		console.error(err)
+		console.error("Error during revalidation:", err)
 		return NextResponse.json(
-			{
-				message: "Error revalidating",
-			},
+			{ message: "Error revalidating path." },
 			{ status: 500 }
 		)
 	}
