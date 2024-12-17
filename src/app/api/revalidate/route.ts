@@ -3,8 +3,8 @@ import { revalidatePath } from "next/cache"
 
 /*
 Revalidate route: Triggered by a Eventbrite webhook. 
-It retrieves tag and secret from the search params. 
-Revalidate on demand the provided tag.
+It retrieves a secret from the search params. 
+Revalidate on demand the events path.
 */
 export async function POST(request: NextRequest) {
 	const secret = request.nextUrl.searchParams.get("secret")
@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
 	try {
 		// Revalidate the entire /events path
 		console.log("Revalidating path: /events")
-		revalidatePath("/events") // Specify the route you want to revalidate
+		revalidatePath("/events")
 
 		return NextResponse.json({ revalidated: true, now: Date.now() })
 	} catch (err) {

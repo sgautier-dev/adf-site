@@ -95,7 +95,7 @@ export default function Experiences() {
 									href="/events"
 									className="rounded-md bg-cadetBlue px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cadetBlue/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cadetBlue/80"
 								>
-									Nos expériences à venir
+									Nos évènements à venir
 								</Link>
 								{/* <a href="#" className="text-sm/6 font-semibold text-gray-900">
 									Live demo <span aria-hidden="true">→</span>

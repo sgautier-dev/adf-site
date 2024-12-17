@@ -45,7 +45,7 @@ export default function Events({ events }: { events: ReturnedEvent[] }) {
 
 							{/* Event Details */}
 							<div className="max-w-xl">
-								<div className="mt-8 flex items-center gap-x-4 text-xs">
+								<div className="mt-8 flex items-center gap-x-4 text-lg">
 									{/* Event Date */}
 									<time
 										dateTime={event.date}
@@ -62,7 +62,7 @@ export default function Events({ events }: { events: ReturnedEvent[] }) {
 
 								{/* Event Name and Summary */}
 								<div className="group relative hover:bg-gray-100 rounded-2xl">
-									<h3 className="mt-3 text-lg/6 font-semibold text-gray-900">
+									<h3 className="mt-3 text-base/6 font-semibold text-gray-900">
 										{event.isSoldOut ? (
 											<span>{event.name}</span>
 										) : (

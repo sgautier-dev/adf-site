@@ -6,7 +6,7 @@ function formatEventDateTime(startISO: string, endISO: string): string {
 
 	const dateFormatter = new Intl.DateTimeFormat("fr-FR", {
 		day: "numeric",
-		month: "long",
+		month: "short",
 		year: "numeric",
 	})
 
