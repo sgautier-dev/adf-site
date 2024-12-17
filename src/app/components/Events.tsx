@@ -1,32 +1,7 @@
-"use client"
-
-import { useEffect, useState } from "react"
 import Image from "next/image"
 import fallback from "../../../public/images/fallback.png"
-import { ArrowPathIcon } from "@heroicons/react/24/outline"
 
-export default function Events() {
-	const [events, setEvents] = useState<ReturnedEvent[]>([])
-	const [loading, setLoading] = useState(true)
-
-	useEffect(() => {
-		async function fetchEvents() {
-			const res = await fetch("/api/events")
-			const data = await res.json()
-			setEvents(data)
-			setLoading(false)
-		}
-
-		fetchEvents()
-	}, [])
-
-	if (loading) {
-		return (
-			<div className="flex min-h-screen items-center justify-center bg-white">
-				<ArrowPathIcon className="h-20 w-20 animate-spin text-cadetBlue" />
-			</div>
-		)
-	}
+export default function Events({ events }: { events: ReturnedEvent[] }) {
 	return (
 		<div className="overflow-hidden bg-white">
 			<div className="mx-auto max-w-7xl px-6 pb-24 pt-24 sm:pt-32 lg:px-8 lg:pt-12">
