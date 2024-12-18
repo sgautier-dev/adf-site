@@ -46,7 +46,7 @@ export default function RootLayout({
 	return (
 		<html lang="fr">
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} ${quicksand.variable} ${leagueSpartan.variable} antialiased bg-gray-900 mx-auto w-full max-w-screen-2xl`}
+				className={`${geistSans.variable} ${geistMono.variable} ${quicksand.variable} ${leagueSpartan.variable} antialiased bg-white mx-auto w-full max-w-screen-2xl`}
 			>
 				<div className="font-quicksand">
 					<Header />
