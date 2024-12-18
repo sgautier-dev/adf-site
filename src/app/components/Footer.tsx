@@ -50,7 +50,7 @@ const social = [
 export default function Footer() {
 	return (
 		<footer className="bg-white">
-			<div className="mx-auto max-w-7xl px-6 pb-8 pt-8 sm:pt-16 lg:px-8 lg:pt-24">
+			<div className="mx-auto max-w-screen-2xl px-6 pb-8 pt-8 sm:pt-16 lg:px-8 lg:pt-24">
 				<div className="grid grid-cols-2 gap-6 xl:grid-cols-3 xl:gap-8">
 					<div className="space-y-8">
 						<Link href="/" className="-m-1.5 p-1.5">

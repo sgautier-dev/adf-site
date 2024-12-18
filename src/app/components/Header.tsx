@@ -27,12 +27,14 @@ export default function Header() {
 	}, [])
 
 	return (
-		<header className={`sticky top-0 z-20 bg-white transition-opacity duration-300 ${
-			isAtTop ? '' : 'bg-opacity-90'
-		  }`}>
+		<header
+			className={`sticky top-0 z-20 bg-white transition-opacity duration-300 ${
+				isAtTop ? "" : "bg-opacity-90"
+			}`}
+		>
 			<nav
 				aria-label="Global"
-				className="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8"
+				className="mx-auto flex max-w-screen-2xl items-center justify-between p-3 lg:px-8"
 			>
 				<div className="flex flex-1">
 					<div className="hidden lg:flex lg:gap-x-12">

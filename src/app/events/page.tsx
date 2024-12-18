@@ -10,7 +10,7 @@ export default async function EventsPage() {
 	const events = await res.json()
 
 	return (
-		<main className="flex flex-col justify-center text-center max-w-7xl mx-auto">
+		<main className="flex flex-col justify-center text-center max-w-screen-2xl mx-auto">
 			<Events events={events} />
 		</main>
 	)

@@ -4,7 +4,7 @@ import fallback from "../../../public/images/fallback.png"
 export default function Events({ events }: { events: ReturnedEvent[] }) {
 	return (
 		<div className="overflow-hidden bg-white">
-			<div className="mx-auto max-w-7xl px-6 pb-24 pt-24 sm:pt-32 lg:px-8 lg:pt-12">
+			<div className="mx-auto max-w-screen-2xl px-6 pb-24 pt-24 sm:pt-32 lg:px-8 lg:pt-12">
 				<div className="mx-auto max-w-2xl text-center">
 					<h2 className="font-leagueSpartan text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
 						Nos Prochains Événements

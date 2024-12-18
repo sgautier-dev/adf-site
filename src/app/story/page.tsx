@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function StoryPage() {
 	return (
-		<main className="flex flex-col justify-center text-center max-w-7xl mx-auto">
+		<main className="flex flex-col justify-center text-center max-w-screen-2xl mx-auto">
 			<Story />
 			<Quote />
 		</main>

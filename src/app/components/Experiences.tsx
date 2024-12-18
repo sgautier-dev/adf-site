@@ -79,7 +79,7 @@ export default function Experiences() {
 				/>
 			</svg>
 			<div className="overflow-hidden">
-				<div className="mx-auto max-w-7xl px-6 pb-24 pt-24 sm:pt-32 lg:px-8 lg:pt-12">
+				<div className="mx-auto max-w-screen-2xl px-6 pb-24 pt-24 sm:pt-32 lg:px-8 lg:pt-12">
 					<div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
 						<div className="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
 							<h1 className="font-leagueSpartan text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">

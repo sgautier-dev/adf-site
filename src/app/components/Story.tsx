@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function Story() {
 	return (
 		<div className="relative bg-white">
-			<div className="mx-auto max-w-7xl">
+			<div className="mx-auto max-w-screen-2xl">
 				<div className="relative z-10 pt-14 lg:w-full lg:max-w-2xl">
 					<svg
 						viewBox="0 0 100 100"
