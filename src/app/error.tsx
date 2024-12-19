@@ -16,7 +16,7 @@ export default function Error({
 	return (
 		<div className="grid min-h-screen place-items-center px-6 py-24 sm:py-32 lg:px-8">
 			<div className="text-center">
-				<h1 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-5xl">
+				<h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
 					Quelque chose a mal tourné !
 				</h1>
 				<div className="mt-10 flex items-center justify-center gap-x-6">
