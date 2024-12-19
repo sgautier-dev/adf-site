@@ -17,9 +17,9 @@ const schema = z.object({
 	message: z.string().min(1, { message: "Le message est requis." }),
 })
 
-const sendEmail = actionClient
+export const sendEmail = actionClient
 	.schema(schema, {
-		handleValidationErrorsShape: (ve) =>
+		handleValidationErrorsShape: async (ve) =>
 			flattenValidationErrors(ve).fieldErrors,
 	})
 	.action(
@@ -47,5 +47,3 @@ const sendEmail = actionClient
 			}
 		}
 	)
-
-export default sendEmail
