@@ -1,20 +1,15 @@
 import Events from "../components/Events"
+import { fetchEvents } from "../lib/fetchEvents"
 
 export const metadata = {
 	title: "Événements",
 }
 
+export const dynamic = "force-static"
+
 export default async function EventsPage() {
 	try {
-		const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/events`, {
-			cache: "force-cache", // Cache the response
-		})
-
-		if (!res.ok) {
-			throw new Error(`Failed to fetch events: ${res.statusText}`)
-		}
-
-		const events: ReturnedEvent[] = await res.json()
+		const events = await fetchEvents()
 
 		return (
 			<main className="flex flex-col justify-center text-center max-w-screen-2xl mx-auto">
@@ -23,6 +18,6 @@ export default async function EventsPage() {
 		)
 	} catch (error) {
 		console.error("Error loading events:", error)
-		throw error
+		throw error // Let Next.js handle the error with `error.tsx`
 	}
 }
