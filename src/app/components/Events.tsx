@@ -21,7 +21,7 @@ export default function Events({ events }: { events: ReturnedEvent[] }) {
 					{events.map((event) => (
 						<article
 							key={event.id}
-							className="flex flex-col items-start justify-between"
+							className={`flex flex-col items-start justify-between`}
 						>
 							<div className="relative w-full">
 								{/* Event Image */}
@@ -61,7 +61,11 @@ export default function Events({ events }: { events: ReturnedEvent[] }) {
 								</div>
 
 								{/* Event Name and Summary */}
-								<div className="group relative hover:bg-gray-100 rounded-2xl">
+								<div
+									className={`group relative hover:bg-gray-100 rounded-2xl ${
+										event.id === "y40" ? "bg-paleRed/20" : ""
+									}`}
+								>
 									<h3 className="mt-3 text-base/6 font-semibold text-gray-900">
 										{event.isSoldOut ? (
 											<span>{event.name}</span>

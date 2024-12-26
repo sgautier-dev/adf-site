@@ -7,6 +7,7 @@ interface ReturnedEvent {
 	name: string
 	summary: string
 	date: string
+	isoDate: string
 	imageUrl: string | null
 	url: string
 	isSoldOut: boolean

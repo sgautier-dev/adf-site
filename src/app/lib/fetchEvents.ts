@@ -16,7 +16,10 @@ interface EventbriteEvent {
 	}
 }
 
-function formatEventDateTime(startISO: string, endISO: string): string {
+function formatEventDateTime(
+	startISO: string,
+	endISO: string
+): { formattedDate: string; isoDate: string } {
 	const startDate = new Date(startISO)
 	const endDate = new Date(endISO)
 
@@ -36,11 +39,13 @@ function formatEventDateTime(startISO: string, endISO: string): string {
 	const startTimeStr = timeFormatter.format(startDate).replace(":", "h")
 	const endTimeStr = timeFormatter.format(endDate).replace(":", "h")
 
-	return (
-		dateStr.charAt(0).toUpperCase() +
-		dateStr.slice(1) +
-		`, ${startTimeStr} - ${endTimeStr}`
-	)
+	return {
+		formattedDate:
+			dateStr.charAt(0).toUpperCase() +
+			dateStr.slice(1) +
+			`, ${startTimeStr} - ${endTimeStr}`,
+		isoDate: startISO, // Return raw ISO date for sorting
+	}
 }
 
 function constructEventbriteUrl(organizationId: string): string {
@@ -83,8 +88,10 @@ export async function fetchEvents(): Promise<ReturnedEvent[]> {
 		const summary = event.description?.text || "Pas de description disponible."
 		const startLocal = event.start?.local || ""
 		const endLocal = event.end?.local || ""
-		const formattedDate =
-			startLocal && endLocal ? formatEventDateTime(startLocal, endLocal) : ""
+		const { formattedDate, isoDate } =
+			startLocal && endLocal
+				? formatEventDateTime(startLocal, endLocal)
+				: { formattedDate: "", isoDate: "" }
 		const isSoldOut = event.ticket_availability?.is_sold_out
 		const city = event.venue?.address?.city || "Lieu non spécifié"
 
@@ -93,6 +100,7 @@ export async function fetchEvents(): Promise<ReturnedEvent[]> {
 			name,
 			summary,
 			date: formattedDate,
+			isoDate, // for sorting
 			imageUrl: event.logo?.url || null,
 			url: event.url || "",
 			isSoldOut,
