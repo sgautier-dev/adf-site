@@ -1,13 +1,5 @@
-// import UnderConstruct from "./components/UnderConstruct"
-import Hero from "./components/Hero"
+import { redirect } from "next/navigation"
 
 export default function Home() {
-	return (
-		<div className="bg-home-bg bg-cover bg-center">
-			<main className="flex flex-col justify-center text-center max-w-screen-2xl mx-auto h-dvh">
-				{/* <UnderConstruct /> */}
-				<Hero />
-			</main>
-		</div>
-	)
+	redirect("/fr") // redirect to default language page
 }
