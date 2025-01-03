@@ -1,0 +1,37 @@
+{
+	"y40Event": {
+		"summary": "Découvrez l'Aqua Dance Flow dans la piscine la plus profonde du monde avec Julie Gautier",
+		"date": "8-9 mars 2025",
+		"city": "Padoue, Italie"
+	},
+	"hero": {
+		"banner": "Julie Gautier sera présente au Salon de la Plongée 9-12 Jan 2025.",
+		"text": "Courir, sauter, voler, danser sous l'eau. Une nouvelle manière de pratiquer l'apnée."
+	},
+	"buttons": {
+		"more": "En savoir plus",
+		"initiation": "Participer à une initiation"
+	},
+	"links": {
+		"story": "L'histoire"
+	},
+	"navigation": {
+		"story": "Histoire",
+		"experiences": "Expériences",
+		"contact": "Contact",
+		"events": "Événements",
+		"privacy": "Confidentialité",
+		"legal": "Mentions légales"
+	},
+	"footer": {
+		"tagline": "Une nouvelle discipline sportive et artistique, inspirée de l'œuvre AMA",
+		"rights": "Tous droits réservés.",
+		"dev": "Conçu par SG"
+	},
+	"newsletter": {
+		"title": "Rejoignez la communauté ADF",
+		"text": "Rejoignez-nous pour ne rien manquer des futures expériences, événements et initiations d'Aqua Dance Flow.",
+		"email_placeholder": "Votre email",
+		"button": "S'inscrire"
+	}
+}

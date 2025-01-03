@@ -1,0 +1,37 @@
+{
+	"y40Event": {
+		"summary": "Experience Aqua Dance Flow in the world's deepest pool with Julie Gautier",
+		"date": "8-9 March 2025",
+		"city": "Padova, Italy"
+	},
+	"hero": {
+		"banner": "Julie Gautier will be present at the Paris's Diving Exhibition, January 9-12, 2025.",
+		"text": "Run, jump, fly, dance underwater. A new way to practice freediving."
+	},
+	"buttons": {
+		"more": "Learn more",
+		"initiation": "Join an initiation"
+	},
+	"links": {
+		"story": "The Story"
+	},
+	"navigation": {
+		"story": "Story",
+		"experiences": "Experiences",
+		"contact": "Contact",
+		"events": "Events",
+		"privacy": "Privacy",
+		"legal": "Legal Notice"
+	},
+	"footer": {
+		"tagline": "A new artistic and athletic discipline, inspired by the movie AMA",
+		"rights": "All rights reserved.",
+		"dev": "Designed by SG"
+	},
+	"newsletter": {
+		"title": "Join the ADF Community",
+		"text": "Join us to stay updated on the latest experiences, events, and Aqua Dance Flow initiations.",
+		"email_placeholder": "Your email",
+		"button": "Subscribe"
+	}
+}
