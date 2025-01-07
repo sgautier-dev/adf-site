@@ -1,4 +1,21 @@
 import type { Metadata } from "next"
+import { LanguageProvider } from "@/app/components/LanguageContext"
+import Header from "@/app/components/Header"
+import Footer from "@/app/components/Footer"
+import "./globals.css"
+import { Quicksand, League_Spartan } from "next/font/google" 
+
+const quicksand = Quicksand({
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-quicksand",
+})
+
+const leagueSpartan = League_Spartan({
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-leagueSpartan",
+})
 
 export const metadata: Metadata = {
 	title: {
@@ -15,5 +32,17 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
-	return <body>{children}</body>
+	return (
+		<html lang="fr">
+			<body
+				className={`${quicksand.variable} ${leagueSpartan.variable} antialiased bg-white mx-auto w-full max-w-screen-2xl`}
+			>
+				<LanguageProvider>
+					<Header />
+					{children}
+					<Footer />
+				</LanguageProvider>
+			</body>
+		</html>
+	)
 }

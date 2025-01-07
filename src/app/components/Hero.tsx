@@ -15,7 +15,7 @@ export default function Hero({ translations }: { translations: Translations }) {
 							className="font-semibold text-white"
 						>
 							<span aria-hidden="true" className="absolute inset-0" />
-							En savoir plus <span aria-hidden="true">&rarr;</span>
+							{translations.buttons.more} <span aria-hidden="true">&rarr;</span>
 						</a>
 					</div>
 				</div>
@@ -23,22 +23,21 @@ export default function Hero({ translations }: { translations: Translations }) {
 					<h1 className="font-leagueSpartan text-balance text-5xl font-semibold tracking-tight text-white sm:text-7xl">
 						Aqua Dance Flow
 					</h1>
-					<p className="mt-8 text-pretty text-lg font-medium text-gray-400 sm:text-xl/8">
-						Courir, sauter, voler, danser sous l&apos;eau. Une nouvelle manière
-						de pratiquer l&apos;apnée.
+					<p className="mt-8 text-pretty text-lg font-medium text-gray-400 sm:text-xl/8 max-w-2xl">
+						{translations.hero.text}
 					</p>
 					<div className="mt-10 flex items-center justify-center gap-x-6">
 						<Link
 							href="/experiences"
 							className="rounded-md bg-cadetBlue px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cadetBlue/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cadetBlue/80"
 						>
-							Participer à une initiation
+							{translations.buttons.initiation}
 						</Link>
 						<Link
 							href="/story"
 							className="text-sm/6 font-semibold text-white hover:scale-110 transition"
 						>
-							L&apos;histoire <span aria-hidden="true">→</span>
+							{translations.links.story} <span aria-hidden="true">→</span>
 						</Link>
 					</div>
 				</div>
