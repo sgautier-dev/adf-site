@@ -9,9 +9,10 @@ import { ArrowPathIcon } from "@heroicons/react/24/outline"
 import { useLanguage } from "./LanguageContext"
 
 export default function Contact() {
-	const { translations } = useLanguage()
+	const { translations, language } = useLanguage()
 
 	const [formData, setFormData] = useState({
+		locale: language,
 		firstName: "",
 		lastName: "",
 		email: "",
@@ -77,6 +78,7 @@ export default function Contact() {
 				formRef.current.reset() // Reset form if success
 			}
 			setFormData({
+				locale: language,
 				firstName: "",
 				lastName: "",
 				email: "",
@@ -84,7 +86,7 @@ export default function Contact() {
 				message: "",
 			})
 		}
-	}, [isExecuting, result])
+	}, [isExecuting, result, language])
 
 	return (
 		<div className="relative bg-white">
@@ -177,7 +179,7 @@ export default function Contact() {
 											{translations.form.phone}
 										</label>
 										<p id="phone-description" className="text-gray-400">
-											Optionnel
+										{translations.form.optional}
 										</p>
 									</div>
 									<div className="mt-2.5">

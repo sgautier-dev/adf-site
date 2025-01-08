@@ -36,7 +36,17 @@
 		"title": "Join the ADF Community",
 		"text": "Join us to stay updated on the latest experiences, events, and Aqua Dance Flow initiations.",
 		"email_placeholder": "Your email",
-		"button": "Subscribe"
+		"button": "Subscribe",
+		"email_missing": "Email is missing!",
+		"invalid_email": "Invalid email address",
+		"recaptcha_failed": "reCAPTCHA verification failed!",
+		"recaptcha_error": "An error occurred during reCAPTCHA verification.",
+		"subscription_success": "Subscription confirmed! Thank you for subscribing.",
+		"subscription_error": "An error occurred. Please try again.",
+		"invalid_email_message": "Please enter a valid email address.",
+		"already_subscribed": "You are already subscribed to the newsletter!",
+		"email_removed": "This email address has been permanently removed from the list. Please use another email to re-subscribe.",
+		"unexpected_error": "An unexpected error occurred."
 	},
 	"story": {
 		"title": "UNDERWATER DANCE",
@@ -58,6 +68,7 @@
 		"first_name": "First Name",
 		"last_name": "Last Name",
 		"phone": "Phone",
+		"optional": "Optional",
 		"message": "Your Message",
 		"message_description": "Max 500 characters",
 		"button": "Send"
@@ -65,5 +76,22 @@
 	"events": {
 		"title": "Our Upcoming Events",
 		"text": "Discover the upcoming Aqua Dance Flow initiations and workshops. Each session is an invitation to explore your aquatic potential in a world of weightlessness and creativity. Book your spot now to experience a unique moment with Julie Gautier."
+	},
+	"server_messages": {
+		"email_required": "First name is required.",
+		"last_name_required": "Last name is required.",
+		"invalid_email": "Invalid email address.",
+		"message_required": "Message is required.",
+		"email_sent": "Your message has been sent successfully.",
+		"security_error": "Error during security verification. Please try again.",
+		"email_exists": "You are already subscribed to the newsletter!"
+	},
+	"notifications": {
+		"success_title": "Success!",
+		"server_error_title": "Server Error",
+		"server_error_message": "Please try again later.",
+		"fetch_error_title": "Network Error",
+		"fetch_error_message": "Check your internet connection.",
+		"validation_error_title": "Validation Error"
 	}
 }

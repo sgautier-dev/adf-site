@@ -6,10 +6,12 @@ import { z } from "zod"
 import { actionClient } from "../lib/safe-action"
 import { flattenValidationErrors } from "next-safe-action"
 import { checkArcJetProtection } from "@/app/lib/arcjet-protection"
+import { getTranslations } from "@/app/lib/getTranslations"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 const schema = z.object({
+	locale: z.string().default("fr"),
 	firstName: z.string().min(1, { message: "Le prénom est requis." }),
 	lastName: z.string().min(1, { message: "Le nom de famille est requis." }),
 	email: z.string().email({ message: "Adresse e-mail invalide." }),
@@ -23,7 +25,9 @@ const sendEmail = actionClient
 			flattenValidationErrors(ve).fieldErrors,
 	})
 	.action(
-		async ({ parsedInput: { firstName, lastName, email, phone, message } }) => {
+		async ({
+			parsedInput: { locale, firstName, lastName, email, phone, message },
+		}) => {
 			// throw new Error ('test')
 
 			await checkArcJetProtection()
@@ -42,8 +46,10 @@ const sendEmail = actionClient
 				}),
 			})
 
+			const translations = await getTranslations(locale)
+
 			return {
-				message: "Votre message bien été envoyé.",
+				message: translations.server_messages.email_sent,
 			}
 		}
 	)

@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server"
 const mailchimp = require("@mailchimp/mailchimp_marketing")
 
 import { validateEmail, getRecaptchaVerificationUrl } from "@/app/lib/utils"
+import { getTranslations } from "@/app/lib/getTranslations"
 
 mailchimp.setConfig({
 	apiKey: process.env.MAILCHIMP_API_KEY,
@@ -13,12 +14,19 @@ mailchimp.setConfig({
 Subscribe form route: It validates an email address, verifies a reCAPTCHA token, and adds the email address to a Mailchimp mailing list if all validations pass.
 */
 export async function POST(req: NextRequest) {
-	const { email, token } = await req.json()
+	const { email, token, locale = "fr" } = await req.json()
+	const translations = await getTranslations(locale)
 
 	if (!email)
-		return NextResponse.json({ message: "E-mail absent!" }, { status: 400 })
+		return NextResponse.json(
+			{ message: translations.newsletter.email_missing },
+			{ status: 400 }
+		)
 	if (!validateEmail(email)) {
-		return NextResponse.json({ message: "Email invalide" }, { status: 400 })
+		return NextResponse.json(
+			{ message: translations.newsletter.invalid_email },
+			{ status: 400 }
+		)
 	}
 
 	try {
@@ -29,7 +37,7 @@ export async function POST(req: NextRequest) {
 		if (!responseRecaptcha.success) {
 			return NextResponse.json(
 				{
-					message: "La vérification reCAPTCHA a échoué !",
+					message: translations.newsletter.recaptcha_failed,
 				},
 				{ status: 400 }
 			)
@@ -38,7 +46,7 @@ export async function POST(req: NextRequest) {
 		console.error(error)
 		return NextResponse.json(
 			{
-				message: "Une erreur est survenue lors de la vérification reCAPTCHA.",
+				message: translations.newsletter.recaptcha_error,
 			},
 			{ status: 500 }
 		)
@@ -54,14 +62,14 @@ export async function POST(req: NextRequest) {
 		if (response.status === "subscribed") {
 			return NextResponse.json(
 				{
-					message: "Abonnement confirmé ! Merci de vous être abonné.",
+					message: translations.newsletter.subscription_success,
 				},
 				{ status: 200 }
 			)
 		} else {
 			return NextResponse.json(
 				{
-					message: "Une erreur est survenue. Veuillez réessayer.",
+					message: translations.newsletter.subscription_error,
 				},
 				{ status: 400 }
 			)
@@ -73,19 +81,18 @@ export async function POST(req: NextRequest) {
 		switch (title) {
 			case "Invalid Resource":
 				return NextResponse.json(
-					{ message: "Veuillez entrer une adresse e-mail valide." },
+					{ message: translations.newsletter.invalid_email_message },
 					{ status: error.status }
 				)
 			case "Member Exists":
 				return NextResponse.json(
-					{ message: "Vous êtes déjà abonné à la newsletter !" },
+					{ message: translations.newsletter.already_subscribed },
 					{ status: error.status }
 				)
 			case "Forgotten Email Not Subscribed":
 				return NextResponse.json(
 					{
-						message:
-							"Cette adresse e-mail a été supprimée définitivement de la liste. Veuillez utiliser une autre adresse e-mail pour vous réinscrire.",
+						message: translations.newsletter.email_removed,
 					},
 					{ status: error.status }
 				)
@@ -93,7 +100,7 @@ export async function POST(req: NextRequest) {
 			default:
 				return NextResponse.json(
 					{
-						message: detail || "Une erreur inattendue est survenue.",
+						message: detail || translations.newsletter.unexpected_error,
 					},
 					{ status: status || 500 }
 				)

@@ -11,7 +11,7 @@ export default function Newsletter() {
 	const [message, setMessage] = useState("")
 	const [isSubmitting, setIsSubmitting] = useState(false)
 
-	const { translations } = useLanguage()
+	const { translations, language } = useLanguage()
 
 	//hidding Google reCaptcha badge from page
 	useEffect(() => {
@@ -33,29 +33,26 @@ export default function Newsletter() {
 		const token = await getRecaptchaToken()
 
 		if (!token) {
-			setMessage(
-				"Erreur lors de la vérification de sécurité. Veuillez réessayer."
-			)
+			setMessage(translations.newsletter.recaptcha_error)
 			setMessage("Envoyer")
 			setIsSubmitting(false)
 			return
 		}
 
 		if (!validateEmail(email)) {
-			setMessage("Veuillez entrer une adresse e-mail valide.")
+			setMessage(translations.newsletter.invalid_email_message)
 			return
 		}
 
 		setIsSubmitting(true)
 
 		try {
-			console.log("email du formulaire: ", email)
 			const response = await fetch("/api/subscribe", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
 				},
-				body: JSON.stringify({ email, token }),
+				body: JSON.stringify({ email, token, locale: language }),
 			})
 
 			const data = await response.json()
@@ -64,13 +61,11 @@ export default function Newsletter() {
 				setMessage(data.message)
 				setEmail("")
 			} else {
-				setMessage(
-					data.message || "Une erreur est survenue. Veuillez réessayer."
-				)
+				setMessage(data.message || translations.newsletter.subscription_error)
 			}
 		} catch (error) {
 			console.error(error)
-			setMessage("Une erreur est survenue. Veuillez réessayer.")
+			setMessage(translations.newsletter.subscription_error)
 		}
 
 		setIsSubmitting(false)

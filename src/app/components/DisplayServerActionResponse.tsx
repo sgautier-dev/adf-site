@@ -1,5 +1,6 @@
-import Notification from "./Notification" // Adjust path
+import Notification from "./Notification"
 import { useState, useEffect } from "react"
+import { useLanguage } from "@/app/components/LanguageContext" // ✅ Import language context
 
 type Props = {
 	result: {
@@ -14,11 +15,12 @@ type Props = {
 
 export function DisplayServerActionResponse({ result }: Props) {
 	const { data, serverError, fetchError, validationErrors } = result
+	const { translations } = useLanguage()
 
 	const [showSuccess, setShowSuccess] = useState(!!data?.message)
 	const [showServerError, setShowServerError] = useState(!!serverError)
 	const [showFetchError, setShowFetchError] = useState(!!fetchError)
-	const [showValidationErrors, setShowValidationErrors] = useState(true) // show if we have any
+	const [showValidationErrors, setShowValidationErrors] = useState(true) // Show if we have any
 
 	useEffect(() => {
 		setShowSuccess(!!data?.message)
@@ -44,7 +46,7 @@ export function DisplayServerActionResponse({ result }: Props) {
 				<Notification
 					show={showSuccess}
 					onClose={() => setShowSuccess(false)}
-					title="Succès !"
+					title={translations.notifications.success_title}
 					message={data.message}
 					variant="success"
 				/>
@@ -54,8 +56,8 @@ export function DisplayServerActionResponse({ result }: Props) {
 				<Notification
 					show={showServerError}
 					onClose={() => setShowServerError(false)}
-					title="Erreur serveur"
-					message={`Veuillez réessayer plus tard.`}
+					title={translations.notifications.server_error_title}
+					message={translations.notifications.server_error_message}
 					variant="error"
 				/>
 			)}
@@ -64,8 +66,8 @@ export function DisplayServerActionResponse({ result }: Props) {
 				<Notification
 					show={showFetchError}
 					onClose={() => setShowFetchError(false)}
-					title="Erreur réseau"
-					message={`Vérifiez votre connexion.`}
+					title={translations.notifications.fetch_error_title}
+					message={translations.notifications.fetch_error_message}
 					variant="error"
 				/>
 			)}
@@ -79,10 +81,9 @@ export function DisplayServerActionResponse({ result }: Props) {
 							key={key}
 							show={true}
 							onClose={() => {
-								// For now, just hide them all.
 								setShowValidationErrors(false)
 							}}
-							title="Erreur de validation"
+							title={translations.notifications.validation_error_title}
 							message={`${key}: ${errors?.join(", ")}`}
 							variant="error"
 						/>
