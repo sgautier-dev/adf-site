@@ -88,6 +88,13 @@ export default function Contact() {
 		}
 	}, [isExecuting, result, language])
 
+	useEffect(() => {
+		setFormData((prevData) => ({
+			...prevData,
+			locale: language, // ✅ Ensure locale is always in sync with selected language
+		}))
+	}, [language])
+
 	return (
 		<div className="relative bg-white">
 			<div className="lg:absolute lg:inset-0 lg:left-1/2">
@@ -179,7 +186,7 @@ export default function Contact() {
 											{translations.form.phone}
 										</label>
 										<p id="phone-description" className="text-gray-400">
-										{translations.form.optional}
+											{translations.form.optional}
 										</p>
 									</div>
 									<div className="mt-2.5">
