@@ -47,7 +47,6 @@ export default function UnderConstruct() {
 		setIsSubmitting(true)
 
 		try {
-			console.log("email du formulaire: ", email)
 			const response = await fetch("/api/subscribe", {
 				method: "POST",
 				headers: {

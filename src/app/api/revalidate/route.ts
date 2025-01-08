@@ -19,8 +19,6 @@ export async function POST(request: NextRequest) {
 	}
 
 	try {
-		// Revalidate the entire /events path
-		console.log("Revalidating path: /events")
 		revalidatePath("/events")
 
 		return NextResponse.json({ revalidated: true, now: Date.now() })

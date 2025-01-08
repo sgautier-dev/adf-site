@@ -34,7 +34,7 @@ export default function Newsletter() {
 
 		if (!token) {
 			setMessage(translations.newsletter.recaptcha_error)
-			setMessage("Envoyer")
+			setMessage(translations.newsletter.button)
 			setIsSubmitting(false)
 			return
 		}
