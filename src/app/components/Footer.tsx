@@ -1,7 +1,10 @@
+"use client" // for translations
+
 import Link from "next/link"
 import adfLogo from "../../../public/images/logos/ADF-logo.png"
 import Image from "next/image"
-import { legal, menu } from "@/app/lib/navigation"
+import { getLegal, getMenu } from "@/app/lib/navigation"
+import { useLanguage } from "./LanguageContext"
 import Newsletter from "./Newsletter"
 import Script from "next/script"
 
@@ -48,6 +51,10 @@ const social = [
 ]
 
 export default function Footer() {
+	const { translations } = useLanguage()
+	const menu = getMenu(translations)
+	const legal = getLegal(translations)
+
 	return (
 		<footer className="bg-white">
 			<div className="mx-auto max-w-screen-2xl px-6 pb-8 pt-8 sm:pt-16 lg:px-8 lg:pt-24">
@@ -65,8 +72,7 @@ export default function Footer() {
 							/>
 						</Link>
 						<p className="text-balance text-sm/6 text-gray-600 max-w-64">
-							Une nouvelle discipline sportive et artistique, inspirée de
-							l&apos;œuvre AMA
+							{translations.footer.tagline}
 						</p>
 						<div className="flex gap-x-6">
 							{social.map((item) => (
@@ -124,10 +130,10 @@ export default function Footer() {
 				<div className="flex space-x-6 text-sm/6 text-gray-600 mt-12 border-t border-gray-900/1 pt-8 sm:mt-16 lg:mt-20">
 					<p>
 						Copyright &copy; {new Date().getFullYear()} Aqua Dance Flow.{" "}
-						<span className=" text-nowrap">Tous droits réservés.</span>
+						<span className=" text-nowrap">{translations.footer.rights}</span>
 					</p>
 					<a href="https://www.sgautier.dev/" target="_blank">
-						<p translate="no">Designed by SG</p>
+						<p translate="no">{translations.footer.dev}</p>
 					</a>
 				</div>
 			</div>

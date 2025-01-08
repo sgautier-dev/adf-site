@@ -1,6 +1,10 @@
+"use client" // for translations
+
 import Image from "next/image"
 import quote from "../../../public/images/quote-julie.png"
+import { useLanguage } from "./LanguageContext"
 export default function Quote() {
+	const { translations } = useLanguage()
 	return (
 		<div className="pb-16 pt-24 sm:pb-24 sm:pt-32 xl:pb-32">
 			<div className="bg-gray-900 pb-20 sm:pb-24 xl:pb-0">
@@ -31,18 +35,12 @@ export default function Quote() {
 								<use x={86} href="#b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb" />
 							</svg>
 							<blockquote className="text-xl/8 font-semibold text-white sm:text-2xl/9">
-								<p>
-									Sur terre je suis une danseuse lambda, mais sous l’eau je me
-									libère totalement et je vole. Je me sens libre, portée et
-									sereine... Pas besoin d’être champion d’apnée ou danseuse
-									professionnelle, la magie de l’eau opère et rend chaque
-									expérience inoubliable.
-								</p>
+								<p>{translations.quote.text}</p>
 							</blockquote>
 							<figcaption className="mt-8 text-base">
 								<div className="font-semibold text-white">Julie Gautier</div>
 								<div className="mt-1 text-gray-400">
-									Réalisatrice, apnéiste et danseuse
+									{translations.quote.author_title}
 								</div>
 							</figcaption>
 						</figure>

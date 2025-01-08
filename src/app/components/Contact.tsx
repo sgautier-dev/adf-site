@@ -6,8 +6,11 @@ import { useAction } from "next-safe-action/hooks"
 import { DisplayServerActionResponse } from "./DisplayServerActionResponse"
 import contact from "../../../public/images/contact.png"
 import { ArrowPathIcon } from "@heroicons/react/24/outline"
+import { useLanguage } from "./LanguageContext"
 
 export default function Contact() {
+	const { translations } = useLanguage()
+
 	const [formData, setFormData] = useState({
 		firstName: "",
 		lastName: "",
@@ -98,12 +101,10 @@ export default function Contact() {
 				<div className="px-6 lg:px-8">
 					<div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
 						<h2 className="font-leagueSpartan text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-							Contactez ADF
+							{translations.contact.title}
 						</h2>
 						<p className="mt-2 text-lg/8 text-gray-600">
-							Pour toute question ou demande d&apos;information, n&apos;hésitez
-							pas à nous contacter. Nous serons ravis de vous répondre et de
-							vous en dire plus sur Aqua Dance Flow.
+							{translations.contact.text}
 						</p>
 						<form ref={formRef} onSubmit={handleSubmit} className="mt-16">
 							<div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
@@ -112,7 +113,7 @@ export default function Contact() {
 										htmlFor="firstName"
 										className="block text-sm/6 font-semibold text-gray-900"
 									>
-										Prénom
+										{translations.form.first_name}
 									</label>
 									<div className="mt-2.5">
 										<input
@@ -132,7 +133,7 @@ export default function Contact() {
 										htmlFor="lastName"
 										className="block text-sm/6 font-semibold text-gray-900"
 									>
-										Nom
+										{translations.form.last_name}
 									</label>
 									<div className="mt-2.5">
 										<input
@@ -173,7 +174,7 @@ export default function Contact() {
 											htmlFor="phone"
 											className="block font-semibold text-gray-900"
 										>
-											Tél
+											{translations.form.phone}
 										</label>
 										<p id="phone-description" className="text-gray-400">
 											Optionnel
@@ -198,10 +199,10 @@ export default function Contact() {
 											htmlFor="message"
 											className="block text-sm/6 font-semibold text-gray-900"
 										>
-											Votre message
+											{translations.form.message}
 										</label>
 										<p id="message-description" className="text-gray-400">
-											Max 500 caractères
+											{translations.form.message_description}
 										</p>
 									</div>
 									<div className="mt-2.5">
@@ -226,7 +227,7 @@ export default function Contact() {
 									{isExecuting ? (
 										<ArrowPathIcon className="h-5 w-5 animate-spin" />
 									) : (
-										"Envoyer"
+										translations.form.button
 									)}
 								</button>
 							</div>

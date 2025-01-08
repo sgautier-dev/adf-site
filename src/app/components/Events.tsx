@@ -1,7 +1,24 @@
+"use client" // for translations
+
 import Image from "next/image"
 import fallback from "../../../public/images/fallback.png"
+import { useLanguage } from "@/app/components/LanguageContext"
+import { getY40Event } from "@/app/lib/getY40Event"
 
-export default function Events({ events }: { events: ReturnedEvent[] }) {
+export default function Events({
+	fetchedEvents,
+}: {
+	fetchedEvents: ReturnedEvent[]
+}) {
+	const { translations } = useLanguage()
+	const y40Event = getY40Event(translations)
+
+	const events: ReturnedEvent[] = [...fetchedEvents, y40Event].sort((a, b) => {
+		const dateA = new Date(a.isoDate).getTime()
+		const dateB = new Date(b.isoDate).getTime()
+		return dateA - dateB
+	})
+
 	return (
 		<div className="overflow-hidden bg-white">
 			<div className="mx-auto max-w-screen-2xl px-6 pb-24 pt-24 sm:pt-32 lg:px-8 lg:pt-12">

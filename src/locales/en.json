@@ -1,19 +1,23 @@
 {
 	"y40Event": {
+		"name": "Workshop at Y-40",
 		"summary": "Experience Aqua Dance Flow in the world's deepest pool with Julie Gautier",
 		"date": "8-9 March 2025",
 		"city": "Padova, Italy"
 	},
 	"hero": {
 		"banner": "Julie Gautier will be present at the Paris's Diving Exhibition, January 9-12, 2025.",
+		"banner_sm": "Julie Gautier at Paris's Diving Exhibition 9-12 Jan.",
 		"text": "Run, jump, fly, dance underwater. A new way to practice freediving."
 	},
 	"buttons": {
 		"more": "Learn more",
-		"initiation": "Join an initiation"
+		"initiation": "Join an initiation",
+		"events": "Upcoming events"
 	},
 	"links": {
-		"story": "The Story"
+		"story": "The Story",
+		"ama": "Watch AMA"
 	},
 	"navigation": {
 		"story": "Story",
@@ -33,5 +37,29 @@
 		"text": "Join us to stay updated on the latest experiences, events, and Aqua Dance Flow initiations.",
 		"email_placeholder": "Your email",
 		"button": "Subscribe"
+	},
+	"story": {
+		"title": "UNDERWATER DANCE",
+		"text": "Aqua Dance Flow (ADF) is a new athletic and artistic discipline inspired by the film AMA, created by Julie Gautier. This form of artistic expression introduces a new way to practice freediving: running, jumping, flying, and dancing underwater. Born from Julie Gautier’s unique vision, ADF expands the artistic possibilities of swimming, beyond just knowing how to swim or freedive."
+	},
+	"quote": {
+		"text": "On land, I am an ordinary dancer, but underwater, I am completely free, and I fly. I feel liberated, carried, and serene... You don't need to be a freediving champion or a professional dancer, the magic of water takes over and makes every experience unforgettable.",
+		"author_title": "Filmmaker, freediver, and dancer"
+	},
+	"experiences": {
+		"title": "Dive into a Unique Experience",
+		"text": "The initiations will be led by Julie Gautier herself, who will guide you in exploring your potential, releasing your tensions, and discovering the joy of moving underwater."
+	},
+	"contact": {
+		"title": "Contact ADF",
+		"text": "For any questions or inquiries, feel free to reach out to us. We would be happy to answer and tell you more about Aqua Dance Flow."
+	},
+	"form": {
+		"first_name": "First Name",
+		"last_name": "Last Name",
+		"phone": "Phone",
+		"message": "Your Message",
+		"message_description": "Max 500 characters",
+		"button": "Send"
 	}
 }

@@ -1,13 +1,19 @@
-import Link from "next/link"
-import { Translations } from "@/app/lib/translations"
+"use client" // for translations
 
-export default function Hero({ translations }: { translations: Translations }) {
+import Link from "next/link"
+import { useLanguage } from "./LanguageContext"
+
+export default function Hero() {
+	const { translations } = useLanguage()
 	return (
 		<div className="mx-auto sm:px-6 lg:px-8">
 			<div className="relative isolate overflow-hidden bg-gray-900/80 px-3 py-24 shadow-2xl sm:rounded-3xl sm:px-24 xl:py-32 animate-translate">
-				<div className="hidden sm:mb-8 sm:flex sm:justify-center">
+				<div className="mb-8 flex justify-center">
 					<div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-300 ring-2 ring-paleRed hover:ring-paleRed/30">
-						{translations.hero.banner}{" "}
+						<div className="inline sm:hidden">
+							{translations.hero.banner_sm}
+						</div>{" "}
+						<div className="hidden sm:inline">{translations.hero.banner}</div>{" "}
 						<a
 							href="https://www.salon-de-la-plongee.com/fr/animations/fiche-animations/2051/3714.html"
 							target="_blank"

@@ -7,12 +7,16 @@ import Image from "next/image"
 
 import adfLogo from "../../../public/images/logos/ADF-logo.png"
 import Link from "next/link"
-import { menu } from "@/app/lib/navigation"
+import { getMenu } from "@/app/lib/navigation"
 import LanguageSwitcher from "./LanguageSwitcher"
+import { useLanguage } from "./LanguageContext"
 
 export default function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 	const [isAtTop, setIsAtTop] = useState(true)
+
+	const { translations } = useLanguage()
+	const menu = getMenu(translations)
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -71,13 +75,14 @@ export default function Header() {
 						priority={true}
 					/>
 				</Link>
-				<div className="flex flex-col lg:flex-row flex-1 gap-y-3 lg:gap-x-12 items-center justify-end">
+				<div className="flex flex-col sm:flex-row flex-1 gap-y-3 sm:gap-x-12 items-center justify-end">
 					<LanguageSwitcher />
 					<Link
 						href="/events"
 						className="text-sm/6 font-semibold text-black hover:scale-110 transition"
 					>
-						Événements <span aria-hidden="true">&rarr;</span>
+						{translations.navigation.events}{" "}
+						<span aria-hidden="true">&rarr;</span>
 					</Link>
 				</div>
 			</nav>
@@ -120,7 +125,8 @@ export default function Header() {
 								className="text-sm/6 font-semibold text-black hover:scale-110 transition"
 								onClick={() => setMobileMenuOpen(false)}
 							>
-								Calendrier <span aria-hidden="true">&rarr;</span>
+								{translations.navigation.events}{" "}
+								<span aria-hidden="true">&rarr;</span>
 							</Link>
 						</div>
 					</div>

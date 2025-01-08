@@ -1,3 +1,5 @@
+"use client" // for translations
+
 import Link from "next/link"
 import Image from "next/image"
 import image1 from "../../../public/images/experiences-1.jpg"
@@ -5,8 +7,10 @@ import image2 from "../../../public/images/experiences-2.png"
 import image3 from "../../../public/images/experiences-3.jpg"
 import image4 from "../../../public/images/experiences-4.jpg"
 import image5 from "../../../public/images/experiences-5.jpg"
+import { useLanguage } from "./LanguageContext"
 
 export default function Experiences() {
+	const { translations } = useLanguage()
 	return (
 		<div className="relative isolate bg-white">
 			<svg
@@ -83,19 +87,17 @@ export default function Experiences() {
 					<div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
 						<div className="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
 							<h1 className="font-leagueSpartan text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
-								Plongez dans une Expérience Unique
+								{translations.experiences.title}
 							</h1>
 							<p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">
-								Les initiations seront animées par Julie Gautier elle-même, qui
-								vous guidera pour explorer votre potentiel, libérer vos tensions
-								et découvrir le plaisir de bouger sous l&apos;eau.
+								{translations.experiences.text}
 							</p>
 							<div className="mt-10 flex items-center gap-x-6">
 								<Link
 									href="/events"
 									className="rounded-md bg-cadetBlue px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cadetBlue/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cadetBlue/80"
 								>
-									Nos évènements à venir
+									{translations.buttons.events}
 								</Link>
 								{/* <a href="#" className="text-sm/6 font-semibold text-gray-900">
 									Live demo <span aria-hidden="true">→</span>

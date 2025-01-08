@@ -1,7 +1,11 @@
+"use client" // for translations
+
 import Image from "next/image"
 import storyImg from "../../../public/images/story.png"
 import Link from "next/link"
+import { useLanguage } from "./LanguageContext"
 export default function Story() {
+	const { translations } = useLanguage()
 	return (
 		<div className="relative bg-white">
 			<div className="mx-auto max-w-screen-2xl">
@@ -18,23 +22,17 @@ export default function Story() {
 					<div className="relative px-6 py-12 sm:py-24 lg:px-8 lg:py-32 lg:pr-0">
 						<div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
 							<h1 className="font-leagueSpartan text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
-								DANSE SUBAQUATIQUE
+								{translations.story.title}
 							</h1>
 							<p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
-								Aqua Dance Flow (ADF) est une nouvelle discipline sportive et
-								artistique inspirée par l&apos;œuvre AMA, créée par Julie
-								Gautier. Ce mode d&apos;expression artistique offre une nouvelle
-								manière de pratiquer l&apos;apnée : courir, sauter, voler et
-								danser sous l&apos;eau. Née de la vision unique de Julie
-								Gautier, ADF ouvre un nouvel horizon artistique à la natation,
-								au-delà du simple savoir-nager et de l&apos;apnée.
+								{translations.story.text}
 							</p>
 							<div className="mt-10 flex items-center gap-x-6">
 								<Link
 									href="/experiences"
 									className="rounded-md bg-cadetBlue px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cadetBlue/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cadetBlue/80"
 								>
-									Participer à une initiation
+									{translations.buttons.initiation}
 								</Link>
 								<a
 									href="https://youtu.be/EdDupIIjyjE?si=SIzeIPVSQ4_hLj0Z"
@@ -42,7 +40,7 @@ export default function Story() {
 									rel="noopener noreferrer"
 									className="text-sm/6 font-semibold text-gray-900"
 								>
-									Voir AMA <span aria-hidden="true">→</span>
+									{translations.links.ama} <span aria-hidden="true">→</span>
 								</a>
 							</div>
 						</div>

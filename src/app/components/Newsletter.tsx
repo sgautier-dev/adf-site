@@ -4,11 +4,14 @@ import { FormEvent, useEffect, useState } from "react"
 import useRecaptcha from "../lib/hooks/useRecaptcha"
 import { validateEmail } from "../lib/utils"
 import { ArrowPathIcon } from "@heroicons/react/24/outline"
+import { useLanguage } from "./LanguageContext"
 
 export default function Newsletter() {
 	const [email, setEmail] = useState("")
 	const [message, setMessage] = useState("")
 	const [isSubmitting, setIsSubmitting] = useState(false)
+
+	const { translations } = useLanguage()
 
 	//hidding Google reCaptcha badge from page
 	useEffect(() => {
@@ -76,11 +79,10 @@ export default function Newsletter() {
 		<div className="mt-12 border-t border-gray-900/10 pt-8 sm:mt-16 lg:mt-20 lg:flex lg:items-center lg:justify-between">
 			<div>
 				<h3 className="text-sm/6 font-semibold text-gray-900">
-					Rejoignez la communauté ADF
+					{translations.newsletter.title}
 				</h3>
 				<p className="mt-2 text-sm/6 text-gray-600 max-w-sm">
-					Rejoignez-nous pour ne rien manquer des futures expériences,
-					événements et initiations d&apos;Aqua Dance Flow.
+					{translations.newsletter.text}
 				</p>
 			</div>
 			<div>
@@ -96,7 +98,7 @@ export default function Newsletter() {
 						name="email-address"
 						type="email"
 						required
-						placeholder="Votre email"
+						placeholder={translations.newsletter.email_placeholder}
 						autoComplete="email"
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
@@ -111,7 +113,7 @@ export default function Newsletter() {
 							{isSubmitting ? (
 								<ArrowPathIcon className="h-5 w-5 animate-spin" />
 							) : (
-								"S'inscrire"
+								translations.newsletter.button
 							)}
 						</button>
 					</div>
