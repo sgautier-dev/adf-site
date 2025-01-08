@@ -61,5 +61,9 @@
 		"message": "Votre message",
 		"message_description": "Max 500 caractères",
 		"button": "Envoyer"
+	},
+	"events": {
+		"title": "Nos Prochains Événements",
+		"text": "Découvrez les prochaines initiations et ateliers Aqua Dance Flow. Chaque session est une invitation à explorer votre potentiel aquatique dans un univers d'apesanteur et de créativité. Réservez dès maintenant votre place pour vivre une expérience unique avec Julie Gautier."
 	}
 }

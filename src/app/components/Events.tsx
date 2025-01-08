@@ -24,14 +24,10 @@ export default function Events({
 			<div className="mx-auto max-w-screen-2xl px-6 pb-24 pt-24 sm:pt-32 lg:px-8 lg:pt-12">
 				<div className="mx-auto max-w-2xl text-center">
 					<h2 className="font-leagueSpartan text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-						Nos Prochains Événements
+						{translations.events.title}
 					</h2>
 					<p className="mt-2 text-lg/8 text-gray-600">
-						Découvrez les prochaines initiations et ateliers Aqua Dance Flow.
-						Chaque session est une invitation à explorer votre potentiel
-						aquatique dans un univers d&apos;apesanteur et de créativité.
-						Réservez dès maintenant votre place pour vivre une expérience unique
-						avec Julie Gautier.
+						{translations.events.text}
 					</p>
 				</div>
 				<div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">

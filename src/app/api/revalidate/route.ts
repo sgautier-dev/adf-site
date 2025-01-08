@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache"
 Revalidate route: Triggered by a Eventbrite webhook. 
 It retrieves a secret from the search params. 
 Revalidate on demand the events path.
+Webhook URL: https://domain/api/revalidate?secret=xxxxx
 */
 export async function POST(request: NextRequest) {
 	const secret = request.nextUrl.searchParams.get("secret")
