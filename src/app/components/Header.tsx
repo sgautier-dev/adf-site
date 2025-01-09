@@ -75,11 +75,11 @@ export default function Header() {
 						priority={true}
 					/>
 				</Link>
-				<div className="flex flex-col sm:flex-row flex-1 gap-y-3 sm:gap-x-12 items-center justify-end">
+				<div className="flex  flex-1 gap-y-3 sm:gap-x-12 items-center justify-end">
 					<LanguageSwitcher />
 					<Link
 						href="/events"
-						className="text-sm/6 font-semibold text-black hover:scale-110 transition"
+						className="hidden lg:flex text-sm/6 font-semibold text-black hover:scale-110 transition"
 					>
 						{translations.navigation.events}{" "}
 						<span aria-hidden="true">&rarr;</span>
