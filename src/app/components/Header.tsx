@@ -121,7 +121,7 @@ export default function Header() {
 						</Link>
 						<div className="flex flex-1 justify-end">
 							<Link
-								href="#"
+								href="/events"
 								className="text-sm/6 font-semibold text-black hover:scale-110 transition"
 								onClick={() => setMobileMenuOpen(false)}
 							>
