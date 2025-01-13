@@ -30,11 +30,20 @@ export default function Events({
 						{translations.events.text}
 					</p>
 				</div>
+
 				<div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
 					{events.map((event) => (
-						<article
+						<a
 							key={event.id}
-							className={`flex flex-col items-start justify-between`}
+							href={event.isSoldOut ? undefined : event.url} // ❌ No link if sold out
+							target={event.isSoldOut ? undefined : "_blank"}
+							rel={event.isSoldOut ? undefined : "noopener noreferrer"}
+							aria-disabled={event.isSoldOut} // ✅ Mark as disabled for accessibility
+							className={`group relative flex flex-col items-start justify-between rounded-2xl transition ${
+								event.isSoldOut
+									? "cursor-not-allowed opacity-60"
+									: "hover:bg-gray-100"
+							} `}
 						>
 							<div className="relative w-full">
 								{/* Event Image */}
@@ -57,7 +66,7 @@ export default function Events({
 							</div>
 
 							{/* Event Details */}
-							<div className="max-w-xl">
+							<div className="max-w-xl pb-6">
 								<div className="mt-8 flex items-center gap-x-4 text-lg">
 									{/* Event Date */}
 									<time
@@ -74,31 +83,14 @@ export default function Events({
 								</div>
 
 								{/* Event Name and Summary */}
-								<div
-									className={`group relative hover:bg-gray-100 rounded-2xl ${
-										event.id === "y40" ? "bg-paleRed/20" : ""
-									}`}
-								>
-									<h3 className="mt-3 text-base/6 font-semibold text-gray-900">
-										{event.isSoldOut ? (
-											<span>{event.name}</span>
-										) : (
-											<a
-												href={event.url}
-												target="_blank"
-												rel="noopener noreferrer"
-											>
-												<span className="absolute inset-0" />
-												{event.name}
-											</a>
-										)}
-									</h3>
-									<p className="mt-5 line-clamp-3 text-sm/6 text-gray-600">
-										{event.summary}
-									</p>
-								</div>
+								<h3 className="mt-3 text-lg/6 font-semibold text-gray-900">
+									{event.name}
+								</h3>
+								<p className="mt-5 line-clamp-3 text-sm/6 text-gray-600">
+									{event.summary}
+								</p>
 							</div>
-						</article>
+						</a>
 					))}
 				</div>
 			</div>
