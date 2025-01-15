@@ -35,7 +35,7 @@ export default function RootLayout({
 	return (
 		<html lang="fr">
 			<body
-				className={`${quicksand.variable} ${leagueSpartan.variable} antialiased bg-white mx-auto w-full max-w-screen-2xl`}
+				className={`${quicksand.variable} ${leagueSpartan.variable} antialiased bg-white mx-auto w-full max-w-screen-2xl font-quicksand`}
 			>
 				<LanguageProvider>
 					<Header />
