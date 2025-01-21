@@ -86,7 +86,7 @@ export default function Events({
 								<h3 className="mt-3 text-lg/6 font-semibold text-gray-900">
 									{event.name}
 								</h3>
-								<p className="mt-5 line-clamp-3 text-sm/6 text-gray-600">
+								<p className="mt-5 line-clamp-4 text-sm/6 text-gray-600">
 									{event.summary}
 								</p>
 							</div>
