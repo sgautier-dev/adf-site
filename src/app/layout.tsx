@@ -3,7 +3,8 @@ import { LanguageProvider } from "@/app/components/LanguageContext"
 import Header from "@/app/components/Header"
 import Footer from "@/app/components/Footer"
 import "./globals.css"
-import { Quicksand, League_Spartan } from "next/font/google" 
+import { Quicksand, League_Spartan } from "next/font/google"
+import SpeedInsightsWrapper from "./components/SpeedInsightsWrapper"
 
 const quicksand = Quicksand({
 	subsets: ["latin"],
@@ -37,11 +38,13 @@ export default function RootLayout({
 			<body
 				className={`${quicksand.variable} ${leagueSpartan.variable} antialiased bg-white mx-auto w-full max-w-screen-2xl font-quicksand`}
 			>
-				<LanguageProvider>
-					<Header />
-					{children}
-					<Footer />
-				</LanguageProvider>
+				<SpeedInsightsWrapper>
+					<LanguageProvider>
+						<Header />
+						{children}
+						<Footer />
+					</LanguageProvider>
+				</SpeedInsightsWrapper>
 			</body>
 		</html>
 	)
