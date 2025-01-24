@@ -7,6 +7,7 @@ import { DisplayServerActionResponse } from "./DisplayServerActionResponse"
 import contact from "../../../public/images/contact.png"
 import { ArrowPathIcon } from "@heroicons/react/24/outline"
 import { useLanguage } from "./LanguageContext"
+import useRecaptcha from "../lib/hooks/useRecaptcha"
 
 export default function Contact() {
 	const { translations, language } = useLanguage()
@@ -33,18 +34,7 @@ export default function Contact() {
 		document.head.appendChild(style)
 	}, [])
 
-	const getRecaptchaToken = async () => {
-		try {
-			const token = await window.grecaptcha.execute(
-				process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
-				{ action: "contact_form" }
-			)
-			return token
-		} catch (error) {
-			console.error(error)
-			return null
-		}
-	}
+	const { getRecaptchaToken } = useRecaptcha("contact_form")
 
 	const handleChange = (
 		e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>

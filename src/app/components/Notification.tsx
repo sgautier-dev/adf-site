@@ -74,7 +74,7 @@ export default function Notification({
 	return (
 		<div
 			aria-live="assertive"
-			className="pointer-events-none fixed z-50 inset-0 flex items-end px-4 py-6 sm:p-6"
+			className="pointer-events-none fixed z-50 inset-0 flex place-items-center"
 		>
 			<div className="flex w-full flex-col items-center space-y-4 ">
 				<Transition
