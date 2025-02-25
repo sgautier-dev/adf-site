@@ -15,8 +15,6 @@ export default function Quote() {
 								alt="citation julie gautier aqua dance flow"
 								src={quote}
 								className="absolute inset-0 size-full rounded-2xl xl:object-cover shadow-2xl"
-								width={700}
-								height={700}
 							/>
 						</div>
 					</div>

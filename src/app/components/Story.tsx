@@ -52,8 +52,7 @@ export default function Story() {
 					alt="story julie gautier aqua dance flow"
 					src={storyImg}
 					className="aspect-[3/2] object-cover lg:aspect-auto lg:size-full"
-					width={700}
-					height={700}
+					priority
 				/>
 			</div>
 		</div>

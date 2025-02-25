@@ -66,9 +66,6 @@ export default function Footer() {
 								alt="aqua dance flow logo"
 								src={adfLogo}
 								className="h-20 w-auto"
-								height={700}
-								width={700}
-								priority={true}
 							/>
 						</Link>
 						<p className="text-balance text-sm/6 text-gray-600 max-w-64">

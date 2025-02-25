@@ -70,9 +70,6 @@ export default function Header() {
 						alt="aqua dance flow logo"
 						src={adfLogo}
 						className="h-20 w-auto"
-						height={700}
-						width={700}
-						priority={true}
 					/>
 				</Link>
 				<div className="flex  flex-1 gap-y-3 sm:gap-x-12 items-center justify-end">
@@ -114,9 +111,6 @@ export default function Header() {
 								alt="aqua dance flow logo"
 								src={adfLogo}
 								className="h-20 w-auto"
-								height={700}
-								width={700}
-								priority={true}
 							/>
 						</Link>
 						<div className="flex flex-1 justify-end">

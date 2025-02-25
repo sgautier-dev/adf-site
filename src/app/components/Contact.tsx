@@ -92,8 +92,7 @@ export default function Contact() {
 					alt="expériences aqua dance flow"
 					src={contact}
 					className="h-64 w-full bg-gray-50 object-cover sm:h-80 lg:absolute lg:h-full"
-					width={700}
-					height={700}
+					priority
 				/>
 			</div>
 			<div className="pb-24 pt-16 sm:pb-32 sm:pt-24 lg:mx-auto lg:grid lg:max-w-screen-2xl lg:grid-cols-2 lg:pt-32 text-left">

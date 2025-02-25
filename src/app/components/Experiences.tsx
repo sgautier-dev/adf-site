@@ -111,8 +111,6 @@ export default function Experiences() {
 										alt="expériences aqua dance flow - © Charlotte Boiron"
 										src={image1}
 										className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-										width={700}
-										height={700}
 									/>
 									<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 								</div>
@@ -123,8 +121,6 @@ export default function Experiences() {
 										alt="expériences aqua dance flow"
 										src={image2}
 										className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-										width={700}
-										height={700}
 									/>
 									<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 								</div>
@@ -133,8 +129,6 @@ export default function Experiences() {
 										alt="expériences aqua dance flow - © Charlotte Boiron"
 										src={image4}
 										className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-										width={700}
-										height={1050}
 									/>
 									<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 								</div>
@@ -145,8 +139,6 @@ export default function Experiences() {
 										alt="expériences aqua dance flow - © Charlotte Boiron"
 										src={image5}
 										className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-										width={700}
-										height={467}
 									/>
 									<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 								</div>
@@ -155,8 +147,6 @@ export default function Experiences() {
 										alt="expériences aqua dance flow - © Charlotte Boiron"
 										src={image3}
 										className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-										width={640}
-										height={960}
 									/>
 									<div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
 								</div>
