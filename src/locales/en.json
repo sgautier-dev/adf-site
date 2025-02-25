@@ -1,9 +1,20 @@
 {
-	"y40Event": {
-		"name": "Workshop at Y-40",
-		"summary": "Experience Aqua Dance Flow in the world's deepest pool with Julie Gautier. Contact us for information about accommodation and transportation.",
-		"date": "8-9 March 2025",
-		"city": "Padova, Italy"
+	"customEvents": {
+		"y40": {
+			"name": "Workshop at Y-40, Italy",
+			"summary": "Experience Aqua Dance Flow in the world's deepest pool with Julie Gautier. Contact us for info about accommodation and transportation.",
+			"city": "Padova"
+		},
+		"scubashop": {
+			"name": "Workshop in Switzerland",
+			"summary": "Dive into a Unique Experience at Epicentre, Romont. A new and artistic approach to underwater movement, inspired by AMA.",
+			"city": "Romont"
+		},
+		"marinediving": {
+			"name": "Workshop in Corsica",
+			"summary": "Dive into a Unique Experience in Bastia. Discover a new way to move underwater in a playful and inclusive spirit, inspired by the short film AMA.",
+			"city": "Bastia"
+		}
 	},
 	"hero": {
 		"banner": "Workshop at Y-40 in Italy, March 8-9, 2025.",

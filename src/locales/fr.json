@@ -1,9 +1,20 @@
 {
-	"y40Event": {
-		"name": "Stage à Y-40",
-		"summary": "Découvrez l'Aqua Dance Flow dans la piscine la plus profonde du monde avec Julie Gautier. Contactez-nous pour des informations sur le logement et les transports sur place.",
-		"date": "8-9 mars 2025",
-		"city": "Padoue, Italie"
+	"customEvents": {
+		"y40": {
+			"name": "Stage à Y-40, Italie",
+			"summary": "Découvrez l'Aqua Dance Flow dans la piscine la plus profonde du monde avec Julie Gautier. Contactez-nous pour des informations sur le logement et les transports sur place.",
+			"city": "Padoue"
+		},
+		"scubashop": {
+			"name": "Stage en Suisse",
+			"summary": "Plongez dans une Expérience Unique à l'Épicentre, Romont. Une approche inédite et artistique du mouvement sous l’eau, inspirée par le court-métrage AMA.",
+			"city": "Romont"
+		},
+		"marinediving": {
+			"name": "Stage en Corse",
+			"summary": "Plongez dans une Expérience Unique à Bastia. Découvrez une nouvelle manière de bouger sous l’eau dans un esprit ludique et inclusif, inspirée par le court-métrage AMA.",
+			"city": "Bastia"
+		}
 	},
 	"hero": {
 		"banner": "Stage à Y-40 en Italie du 8 au 9 Mars 2025.",

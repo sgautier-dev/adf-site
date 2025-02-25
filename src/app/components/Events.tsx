@@ -3,21 +3,26 @@
 import Image from "next/image"
 import fallback from "../../../public/images/fallback.png"
 import { useLanguage } from "@/app/components/LanguageContext"
-import { getY40Event } from "@/app/lib/getY40Event"
+import { getCustomEvents } from "@/app/lib/getCustomEvents"
+import { formatEventDate } from "../lib/utils"
 
 export default function Events({
 	fetchedEvents,
 }: {
 	fetchedEvents: ReturnedEvent[]
 }) {
-	const { translations } = useLanguage()
-	const y40Event = getY40Event(translations)
+	const { translations, language } = useLanguage()
+	// Get manually added events (non-Eventbrite)
+	const customEvents = getCustomEvents(translations)
 
-	const events: ReturnedEvent[] = [...fetchedEvents, y40Event].sort((a, b) => {
-		const dateA = new Date(a.isoDate).getTime()
-		const dateB = new Date(b.isoDate).getTime()
-		return dateA - dateB
-	})
+	// Merge all events and sort by date
+	const events: ReturnedEvent[] = [...fetchedEvents, ...customEvents].sort(
+		(a, b) => {
+			const dateA = new Date(a.startDate).getTime()
+			const dateB = new Date(b.startDate).getTime()
+			return dateA - dateB
+		}
+	)
 
 	return (
 		<div className="overflow-hidden bg-white">
@@ -35,10 +40,10 @@ export default function Events({
 					{events.map((event) => (
 						<a
 							key={event.id}
-							href={event.isSoldOut ? undefined : event.url} // ❌ No link if sold out
+							href={event.isSoldOut ? undefined : event.url} // No link if sold out
 							target={event.isSoldOut ? undefined : "_blank"}
 							rel={event.isSoldOut ? undefined : "noopener noreferrer"}
-							aria-disabled={event.isSoldOut} // ✅ Mark as disabled for accessibility
+							aria-disabled={event.isSoldOut} // Mark as disabled for accessibility
 							className={`group relative flex flex-col items-start justify-between rounded-2xl transition ${
 								event.isSoldOut
 									? "cursor-not-allowed opacity-60"
@@ -70,10 +75,10 @@ export default function Events({
 								<div className="mt-8 flex items-center gap-x-4 text-lg">
 									{/* Event Date */}
 									<time
-										dateTime={event.date}
+										dateTime={event.startDate}
 										className="text-cadetBlue font-semibold"
 									>
-										{event.date}
+										{formatEventDate(event.startDate, event.endDate, language)}
 									</time>
 
 									{/* Event City */}
