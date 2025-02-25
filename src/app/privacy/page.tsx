@@ -68,23 +68,8 @@ export default function Privacy() {
 					disponible sur notre site web.
 				</p>
 				<p className="mb-4">
-					Ce site est protégé par reCAPTCHA{" "}
-					<Link
-						href="https://policies.google.com/privacy"
-						target="_blank"
-						className="text-orange hover:text-gray-700"
-					>
-						les règles de confidentialité
-					</Link>{" "}
-					et{" "}
-					<Link
-						href="https://policies.google.com/terms"
-						target="_blank"
-						className="text-orange hover:text-gray-700"
-					>
-						les conditions d&apos;utilisation
-					</Link>{" "}
-					de Google s&apos;appliquent.
+					Ce site utilise des mesures de protection avancées contre les
+					soumissions automatisées et les abus.
 				</p>
 			</article>
 		</main>

@@ -6,7 +6,6 @@ import Image from "next/image"
 import { getLegal, getMenu } from "@/app/lib/navigation"
 import { useLanguage } from "./LanguageContext"
 import Newsletter from "./Newsletter"
-import Script from "next/script"
 
 const social = [
 	// {
@@ -134,9 +133,6 @@ export default function Footer() {
 					</a>
 				</div>
 			</div>
-			<Script
-				src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-			/>
 		</footer>
 	)
 }

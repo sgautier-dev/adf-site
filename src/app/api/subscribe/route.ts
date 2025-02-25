@@ -2,8 +2,9 @@ import { NextRequest, NextResponse } from "next/server"
 // eslint-disable-next-line
 const mailchimp = require("@mailchimp/mailchimp_marketing")
 
-import { validateEmail, getRecaptchaVerificationUrl } from "@/app/lib/utils"
+import { validateEmail } from "@/app/lib/utils"
 import { getTranslations } from "@/app/lib/getTranslations"
+import { checkArcJetProtection } from "@/app/lib/arcjet-protection"
 
 mailchimp.setConfig({
 	apiKey: process.env.MAILCHIMP_API_KEY,
@@ -11,10 +12,10 @@ mailchimp.setConfig({
 })
 
 /*
-Subscribe form route: It validates an email address, verifies a reCAPTCHA token, and adds the email address to a Mailchimp mailing list if all validations pass.
+Subscribe form route: It validates an email address, verifies bot detection, and adds the email address to a Mailchimp mailing list if all validations pass.
 */
 export async function POST(req: NextRequest) {
-	const { email, token, locale = "fr" } = await req.json()
+	const { email, locale = "fr" } = await req.json()
 	const translations = await getTranslations(locale)
 
 	if (!email)
@@ -30,25 +31,15 @@ export async function POST(req: NextRequest) {
 	}
 
 	try {
-		const verifyRecaptchaUrl = getRecaptchaVerificationUrl(token)
-		const verifyRecaptcha = await fetch(verifyRecaptchaUrl)
-		const responseRecaptcha = await verifyRecaptcha.json()
-
-		if (!responseRecaptcha.success) {
-			return NextResponse.json(
-				{
-					message: translations.newsletter.recaptcha_failed,
-				},
-				{ status: 400 }
-			)
-		}
-	} catch (error: unknown) {
-		console.error(error)
+		// ✅ Arcjet Protection
+		await checkArcJetProtection()
+	} catch (error) {
+		console.error("Arcjet Error:", error)
 		return NextResponse.json(
 			{
-				message: translations.newsletter.recaptcha_error,
+				message: translations.newsletter.bot_detected || "Protection activated.",
 			},
-			{ status: 500 }
+			{ status: 403 }
 		)
 	}
 
