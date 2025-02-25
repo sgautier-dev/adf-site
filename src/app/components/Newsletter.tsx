@@ -1,7 +1,6 @@
 "use client"
 
-import { FormEvent, useEffect, useState } from "react"
-import useRecaptcha from "../lib/hooks/useRecaptcha"
+import { FormEvent, useState } from "react"
 import { validateEmail } from "../lib/utils"
 import { ArrowPathIcon } from "@heroicons/react/24/outline"
 import { useLanguage } from "./LanguageContext"
@@ -13,31 +12,9 @@ export default function Newsletter() {
 
 	const { translations, language } = useLanguage()
 
-	//hidding Google reCaptcha badge from page
-	useEffect(() => {
-		const style = document.createElement("style")
-		style.innerHTML = `
-		  .grecaptcha-badge {
-			visibility: hidden !important;
-		  }
-		`
-		document.head.appendChild(style)
-	}, [])
-
-	const { getRecaptchaToken } = useRecaptcha("newsletter_form")
-
 	const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault()
 		setMessage("")
-
-		const token = await getRecaptchaToken()
-
-		if (!token) {
-			setMessage(translations.newsletter.recaptcha_error)
-			setMessage(translations.newsletter.button)
-			setIsSubmitting(false)
-			return
-		}
 
 		if (!validateEmail(email)) {
 			setMessage(translations.newsletter.invalid_email_message)
@@ -52,7 +29,7 @@ export default function Newsletter() {
 				headers: {
 					"Content-Type": "application/json",
 				},
-				body: JSON.stringify({ email, token, locale: language }),
+				body: JSON.stringify({ email, locale: language }),
 			})
 
 			const data = await response.json()

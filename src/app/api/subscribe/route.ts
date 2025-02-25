@@ -37,7 +37,8 @@ export async function POST(req: NextRequest) {
 		console.error("Arcjet Error:", error)
 		return NextResponse.json(
 			{
-				message: translations.newsletter.bot_detected || "Protection activated.",
+				message:
+					translations.newsletter.bot_detected || "Protection activated.",
 			},
 			{ status: 403 }
 		)

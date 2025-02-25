@@ -1,9 +1,8 @@
 "use client"
 
-import { FormEvent, useEffect, useState } from "react"
+import { FormEvent, useState } from "react"
 import { BellAlertIcon } from "@heroicons/react/24/outline"
 import { ExclamationTriangleIcon } from "@heroicons/react/24/solid"
-import useRecaptcha from "../lib/hooks/useRecaptcha"
 import { validateEmail } from "../lib/utils"
 
 export default function UnderConstruct() {
@@ -11,33 +10,9 @@ export default function UnderConstruct() {
 	const [message, setMessage] = useState("")
 	const [isSubmitting, setIsSubmitting] = useState(false)
 
-	//hidding Google reCaptcha badge from page
-	useEffect(() => {
-		const style = document.createElement("style")
-		style.innerHTML = `
-		  .grecaptcha-badge {
-			visibility: hidden !important;
-		  }
-		`
-		document.head.appendChild(style)
-	}, [])
-
-	const { getRecaptchaToken } = useRecaptcha("newsletter_form")
-
 	const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault()
 		setMessage("")
-
-		const token = await getRecaptchaToken()
-
-		if (!token) {
-			setMessage(
-				"Erreur lors de la vérification de sécurité. Veuillez réessayer."
-			)
-			setMessage("Envoyer")
-			setIsSubmitting(false)
-			return
-		}
 
 		if (!validateEmail(email)) {
 			setMessage("Veuillez entrer une adresse e-mail valide.")
@@ -52,7 +27,7 @@ export default function UnderConstruct() {
 				headers: {
 					"Content-Type": "application/json",
 				},
-				body: JSON.stringify({ email, token }),
+				body: JSON.stringify({ email }),
 			})
 
 			const data = await response.json()
