@@ -1,19 +1,9 @@
 {
 	"customEvents": {
-		"y40": {
-			"name": "Stage à Y-40, Italie",
-			"summary": "Découvrez l'Aqua Dance Flow dans la piscine la plus profonde du monde avec Julie Gautier. Contactez-nous pour des informations sur le logement et les transports sur place.",
-			"city": "Padoue"
-		},
-		"scubashop": {
-			"name": "Stage en Suisse",
-			"summary": "Plongez dans une Expérience Unique à l'Épicentre, Romont. Une approche inédite et artistique du mouvement sous l’eau, inspirée par le court-métrage AMA.",
-			"city": "Romont"
-		},
-		"marinediving": {
-			"name": "Stage en Corse",
-			"summary": "Plongez dans une Expérience Unique à Bastia. Découvrez une nouvelle manière de bouger sous l’eau dans un esprit ludique et inclusif, inspirée par le court-métrage AMA.",
-			"city": "Bastia"
+		"nemo33": {
+			"name": "Aqua Dance Flow avec Julie Gautier",
+			"summary": "Découvrez une expérience unique mêlant danse, apnée et liberté de mouvement sous l’eau. Rejoignez-nous à Nemo33 Genève pour un stage exclusif où chaque respiration devient une danse.",
+			"city": "Genève, Suisse"
 		}
 	},
 	"hero": {
