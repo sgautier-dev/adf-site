@@ -15,7 +15,7 @@ export default function Hero() {
 						</div>{" "}
 						<div className="hidden sm:inline">{translations.hero.banner}</div>{" "}
 						<a
-							href="https://www.y-40.com/en/aqua-dance-flow-julie-gautier-2/"
+							href="https://www.planeteapnee.fr/aqua-dance-flow-avec-julie-gautier/"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="font-semibold text-white"

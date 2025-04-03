@@ -4,11 +4,16 @@
 			"name": "Aqua Dance Flow avec Julie Gautier",
 			"summary": "Découvrez une expérience unique mêlant danse, apnée et liberté de mouvement sous l’eau. Rejoignez-nous à Nemo33 Genève pour un stage exclusif où chaque respiration devient une danse.",
 			"city": "Genève, Suisse"
+		},
+		"grenoble2025": {
+			"name": "Conférence : Genèse de l'Aqua Dance Flow",
+			"summary": "Julie Gautier, apnéiste et réalisatrice, revient sur son parcours et la création de l'Aqua Dance Flow lors d'une conférence exceptionnelle à l'Université Grenoble Alpes.",
+			"city": "Grenoble"
 		}
 	},
 	"hero": {
-		"banner": "Stage à Y-40 en Italie du 8 au 9 Mars 2025.",
-		"banner_sm": "Stage à Y-40, Italie, 8-9 Mars.",
+		"banner": "Stage à Genève, Suisse, du 19 au 20 Avril 2025.",
+		"banner_sm": "Stage à Genève, 19-20 Avril.",
 		"text": "Courir, sauter, voler, danser sous l'eau. Une nouvelle manière de pratiquer l'apnée."
 	},
 	"buttons": {

@@ -4,11 +4,16 @@
 			"name": "Aqua Dance Flow with Julie Gautier",
 			"summary": "Experience a unique blend of dance, freediving, and movement freedom underwater. Join us at Nemo33 Geneva for an exclusive workshop where every breath becomes a dance.",
 			"city": "Geneva, Switzerland"
+		},
+		"grenoble2025": {
+			"name": "Conference: Birth of Aqua Dance Flow",
+			"summary": "Julie Gautier, freediver and filmmaker, shares her journey and the creation of Aqua Dance Flow in an exclusive talk at the University of Grenoble Alpes.",
+			"city": "Grenoble"
 		}
 	},
 	"hero": {
-		"banner": "Workshop at Y-40 in Italy, March 8-9, 2025.",
-		"banner_sm": "Workshop at Y-40, Italy, March 8-9.",
+		"banner": "Workshop in Geneva, Switzerland, April 19-20, 2025.",
+		"banner_sm": "Workshop in Geneva, April 19-20.",
 		"text": "Run, jump, fly, dance underwater. A new way to practice freediving."
 	},
 	"buttons": {
