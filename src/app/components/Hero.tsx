@@ -2,29 +2,48 @@
 
 import Link from "next/link"
 import { useLanguage } from "./LanguageContext"
+import { getCustomEvents } from "@/app/lib/getCustomEvents"
 
 export default function Hero() {
 	const { translations } = useLanguage()
+	const events = getCustomEvents(translations)
+
+	// Try to get the highlighted event first
+	let highlighted = events.find((event) => event.highlighted)
+
+	// If none, fallback to the next upcoming event
+	if (!highlighted) {
+		const now = new Date()
+		const upcoming = events
+			.filter((e) => new Date(e.startDate) > now)
+			.sort(
+				(a, b) =>
+					new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
+			)
+		highlighted = upcoming[0]
+	}
+
 	return (
 		<div className="mx-auto sm:px-6 lg:px-8">
 			<div className="relative isolate overflow-hidden bg-gray-900/80 px-3 py-24 shadow-2xl sm:rounded-3xl sm:px-24 xl:py-32 animate-translate">
-				<div className="mb-8 flex justify-center">
-					<div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-300 ring-2 ring-paleRed hover:ring-paleRed/30">
-						<div className="inline sm:hidden">
-							{translations.hero.banner_sm}
-						</div>{" "}
-						<div className="hidden sm:inline">{translations.hero.banner}</div>{" "}
-						<a
-							href="https://www.planeteapnee.fr/aqua-dance-flow-avec-julie-gautier/"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="font-semibold text-white"
-						>
-							<span aria-hidden="true" className="absolute inset-0" />
-							{translations.buttons.more} <span aria-hidden="true">&rarr;</span>
-						</a>
+				{highlighted && (
+					<div className="mb-8 flex justify-center">
+						<div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-300 ring-2 ring-paleRed hover:ring-paleRed/30">
+							<div className="inline sm:hidden">{highlighted.banner_sm}</div>{" "}
+							<div className="hidden sm:inline">{highlighted.banner}</div>{" "}
+							<a
+								href={highlighted.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="font-semibold text-white"
+							>
+								<span aria-hidden="true" className="absolute inset-0" />
+								{translations.buttons.more}{" "}
+								<span aria-hidden="true">&rarr;</span>
+							</a>
+						</div>
 					</div>
-				</div>
+				)}
 				<div className="text-center">
 					<h1 className="font-leagueSpartan text-balance text-5xl font-semibold tracking-tight text-white sm:text-7xl">
 						Aqua Dance Flow

@@ -12,4 +12,7 @@ interface ReturnedEvent {
 	url: string
 	isSoldOut: boolean
 	city: string
+	highlighted?: boolean
+	banner?: string
+	banner_sm?: string
 }
