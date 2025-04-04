@@ -1,7 +1,7 @@
 "use client" // for translations
 
 import Link from "next/link"
-import adfLogo from "../../../public/images/logos/ADF-logo.png"
+import cressiLogo from "../../../public/images/logos/logo-cressi-julie.jpg"
 import Image from "next/image"
 import { getLegal, getMenu } from "@/app/lib/navigation"
 import { useLanguage } from "./LanguageContext"
@@ -62,9 +62,9 @@ export default function Footer() {
 						<Link href="/" className="-m-1.5 p-1.5">
 							<span className="sr-only">Aqua Dance Flow</span>
 							<Image
-								alt="aqua dance flow logo"
-								src={adfLogo}
-								className="h-20 w-auto"
+								alt="Cressi, Julie Gautier, logo"
+								src={cressiLogo}
+								className="h-24 w-auto"
 							/>
 						</Link>
 						<p className="text-balance text-sm/6 text-gray-600 max-w-64">
