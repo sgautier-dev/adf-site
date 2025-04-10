@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Dialog, DialogPanel } from "@headlessui/react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
+import cressiLogo from "../../../public/images/logos/Cressi_logo.png"
 
 import adfLogo from "../../../public/images/logos/ADF-logo.png"
 import Link from "next/link"
@@ -72,7 +73,20 @@ export default function Header() {
 						className="h-20 w-auto"
 					/>
 				</Link>
-				<div className="flex  flex-1 gap-y-3 sm:gap-x-12 items-center justify-end">
+				<div className="flex  flex-1 gap-y-3 gap-x-8 sm:gap-x-12 items-center justify-end">
+					<a
+						href="https://store.cressi.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="-m-1.5 p-1.5"
+					>
+						<span className="sr-only">Cressi</span>
+						<Image
+							alt="aqua dance flow logo"
+							src={cressiLogo}
+							className="h-10 lg:h-12 w-auto"
+						/>
+					</a>
 					<LanguageSwitcher />
 					<Link
 						href="/events"

@@ -1,7 +1,6 @@
 "use client" // for translations
 
-import Link from "next/link"
-import adfLogo from "../../../public/images/logos/ADF-logo.png"
+import cressiLogo from "../../../public/images/logos/Cressi_logo.png"
 import Image from "next/image"
 import { getLegal, getMenu } from "@/app/lib/navigation"
 import { useLanguage } from "./LanguageContext"
@@ -59,14 +58,19 @@ export default function Footer() {
 			<div className="mx-auto max-w-screen-2xl px-6 pb-8 pt-8 sm:pt-16 lg:px-8 lg:pt-24">
 				<div className="grid grid-cols-2 gap-6 xl:grid-cols-3 xl:gap-8">
 					<div className="space-y-8">
-						<Link href="/" className="-m-1.5 p-1.5">
-							<span className="sr-only">Aqua Dance Flow</span>
+						<a
+							href="https://store.cressi.com/"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="-m-1.5 p-1.5"
+						>
+							<span className="sr-only">Cressi</span>
 							<Image
 								alt="aqua dance flow logo"
-								src={adfLogo}
+								src={cressiLogo}
 								className="h-20 w-auto"
 							/>
-						</Link>
+						</a>
 						<p className="text-balance text-sm/6 text-gray-600 max-w-64">
 							{translations.footer.tagline}
 						</p>
