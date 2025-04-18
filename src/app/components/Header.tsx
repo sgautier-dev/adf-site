@@ -124,7 +124,7 @@ export default function Header() {
 							<Image
 								alt="aqua dance flow logo"
 								src={adfLogo}
-								className="h-20 w-auto"
+								className="h-28 lg:h-36 w-auto"
 							/>
 						</Link>
 						<div className="flex flex-1 justify-end">
