@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import Image from "next/image"
 import cressiLogo from "../../../public/images/logos/Cressi_logo.png"
 
-import adfLogo from "../../../public/images/logos/by Julie Gautier-transparent.png"
+import adfLogo from "../../../public/images/logos/ADF-logo.png"
 import Link from "next/link"
 import { getMenu } from "@/app/lib/navigation"
 import LanguageSwitcher from "./LanguageSwitcher"
@@ -70,7 +70,7 @@ export default function Header() {
 					<Image
 						alt="aqua dance flow logo"
 						src={adfLogo}
-						className="h-28 lg:h-36 w-auto"
+						className="h-20 w-auto"
 					/>
 				</Link>
 				<div className="flex  flex-1 gap-y-3 gap-x-8 sm:gap-x-12 items-center justify-end">
@@ -124,7 +124,7 @@ export default function Header() {
 							<Image
 								alt="aqua dance flow logo"
 								src={adfLogo}
-								className="h-28 lg:h-36 w-auto"
+								className="h-20 w-auto"
 							/>
 						</Link>
 						<div className="flex flex-1 justify-end">
