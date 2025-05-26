@@ -7,12 +7,12 @@
 			"banner": "Stage à Genève, Suisse, du 19 au 20 Avril 2025.",
 			"banner_sm": "Stage à Genève, 19-20 Avril."
 		},
-		"grenoble2025": {
-			"name": "Conférence : Genèse de l'Aqua Dance Flow",
-			"summary": "Julie Gautier, apnéiste et réalisatrice, revient sur son parcours et la création de l'Aqua Dance Flow lors d'une conférence exceptionnelle à l'Université Grenoble Alpes.",
-			"city": "Grenoble",
-			"banner": "Conférence à Grenoble, le 11 Avril 2025.",
-			"banner_sm": "Conférence à Grenoble, 11 Avril."
+		"romont": {
+			"name": "Stage à Romont (Suisse)",
+			"summary": "Plongez dans l’univers d’Aqua Dance Flow avec Julie Gautier les 13 et 14 septembre 2024 à Romont. Une expérience immersive mêlant apnée et expression corporelle.",
+			"city": "Romont, Suisse",
+			"banner": "Prochain stage à Romont (Suisse) les 13-14 sept. 2025",
+			"banner_sm": "Stage à Romont les 13-14 sept"
 		}
 	},
 	"hero": {

@@ -7,12 +7,12 @@
 			"banner": "Workshop in Geneva, Switzerland, April 19-20, 2025.",
 			"banner_sm": "Workshop in Geneva, April 19-20."
 		},
-		"grenoble2025": {
-			"name": "Conference: Birth of Aqua Dance Flow",
-			"summary": "Julie Gautier, freediver and filmmaker, shares her journey and the creation of Aqua Dance Flow in an exclusive talk at the University of Grenoble Alpes.",
-			"city": "Grenoble",
-			"banner": "Conference in Grenoble, April 11th, 2025.",
-			"banner_sm": "Conference in Grenoble, April 11th."
+		"romont": {
+			"name": "Workshop in Romont (Switzerland)",
+			"summary": "Dive into the world of Aqua Dance Flow with Julie Gautier on September 13–14, 2025 in Romont. An immersive experience combining freediving and body movement.",
+			"city": "Romont, Switzerland",
+			"banner": "Next workshop in Romont (Switzerland) Sept 13–14, 2025",
+			"banner_sm": "Workshop in Romont, Sept 13–14"
 		}
 	},
 	"hero": {
