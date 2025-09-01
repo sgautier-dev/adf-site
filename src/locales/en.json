@@ -1,18 +1,25 @@
 {
 	"customEvents": {
-		"nemo33": {
-			"name": "Aqua Dance Flow with Julie Gautier",
-			"summary": "Experience a unique blend of dance, freediving, and movement freedom underwater. Join us at Nemo33 Geneva for an exclusive workshop where every breath becomes a dance.",
-			"city": "Geneva, Switzerland",
-			"banner": "Workshop in Geneva, Switzerland, April 19-20, 2025.",
-			"banner_sm": "Workshop in Geneva, April 19-20."
+		"bastia": {
+			"name": "Workshop in Bastia (Corsica)",
+			"summary": "Experience Aqua Dance Flow with Julie Gautier from September 19–21, 2025 in Bastia. Discover the art of underwater movement in a stunning Mediterranean setting.",
+			"city": "Bastia",
+			"banner": "ADF workshop in Bastia Sept 19–21, 2025",
+			"banner_sm": "Wokshop in Bastia, Sept 19–21"
 		},
 		"romont": {
 			"name": "Workshop in Romont (Switzerland)",
 			"summary": "Dive into the world of Aqua Dance Flow with Julie Gautier on September 13–14, 2025 in Romont. An immersive experience combining freediving and body movement.",
-			"city": "Romont, Switzerland",
+			"city": "Romont",
 			"banner": "Next workshop in Romont (Switzerland) Sept 13–14, 2025",
 			"banner_sm": "Workshop in Romont, Sept 13–14"
+		},
+		"villefranche": {
+			"name": "Open Day",
+			"summary": "Discover Aqua Dance Flow x NUC on August 24, 9am–12pm, at Plage de l’Ange Gardien. Program: Welcome, Breathing, Ground Dance, Watsu, Water Dance. ***Free intro session.",
+			"city": "Villefranche-sur-Mer",
+			"banner": "ADF × NUC Open Day – Aug 24 · Plage de l’Ange Gardien",
+			"banner_sm": "Villefranche-sur-Mer · Aug 24"
 		}
 	},
 	"hero": {
