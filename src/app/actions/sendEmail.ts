@@ -17,6 +17,7 @@ const schema = z.object({
 	email: z.string().email({ message: "Adresse e-mail invalide." }),
 	phone: z.string().optional(),
 	message: z.string().min(1, { message: "Le message est requis." }),
+	contact_info: z.string().optional(),
 })
 
 const sendEmail = actionClient
@@ -26,9 +27,21 @@ const sendEmail = actionClient
 	})
 	.action(
 		async ({
-			parsedInput: { locale, firstName, lastName, email, phone, message },
+			parsedInput: {
+				locale,
+				firstName,
+				lastName,
+				email,
+				phone,
+				message,
+				contact_info,
+			},
 		}) => {
-			// throw new Error ('test')
+			//throw new Error ('test')
+
+			if (contact_info && contact_info.trim() !== "") {
+				throw new Error("Bot detected (honeypot).")
+			}
 
 			await checkArcJetProtection()
 

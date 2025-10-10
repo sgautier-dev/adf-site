@@ -35,7 +35,11 @@ export default function Contact() {
 	const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault()
 
-		execute(formData)
+		// honeypot field
+		const fd = new FormData(formRef.current!)
+		const contact_info = (fd.get("contact_info") as string) || ""
+
+		execute({ ...formData, contact_info })
 	}
 
 	useEffect(() => {
@@ -193,6 +197,14 @@ export default function Contact() {
 									</div>
 								</div>
 							</div>
+							{/* Honeypot anti-bot */}
+							<input
+								type="text"
+								name="contact_info"
+								className="hidden"
+								tabIndex={-1}
+								autoComplete="off"
+							/>
 							<div className="mt-10 flex justify-end border-t border-gray-900/10 pt-8">
 								<button
 									type="submit"
