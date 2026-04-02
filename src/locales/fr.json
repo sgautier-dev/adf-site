@@ -1,11 +1,18 @@
 {
 	"customEvents": {
-		"bastia": {
-			"name": "Stage à Bastia (Corse)",
-			"summary": "Vivez une expérience immersive avec Julie Gautier du 19 au 21 sept. 2025 à Bastia. Aqua Dance Flow vous invite à explorer la danse sous-marine dans un cadre naturel unique.",
+		"corse": {
+			"name": "Retraite à Bastia (Corse)",
+			"summary": "Offrez-vous une retraite Aqua Dance Flow & Yoga du 1er au 5 juillet 2026 en Haute Corse, dans une villa privatisée surplombant la mer. Un séjour pour se reconnecter à soi à travers le yoga et la danse subaquatique. Hébergement, repas et activités inclus. Tarif : 2850€.",
 			"city": "Bastia",
-			"banner": "Stage ADF à Bastia du 19 au 21 sept. 2025",
-			"banner_sm": "Stage à Bastia, 19–21 sept."
+			"banner": "Retraite à Bastia (Corse) du 1er au 5 juillet 2026",
+			"banner_sm": "Retraite à Bastia du 1er au 5 juillet"
+		},
+		"acores": {
+			"name": "Stage à Faial (Açores)",
+			"summary": "Découvrez Aqua Dance Flow du 24 au 31 août 2026 sur l’île de Faial, aux Açores. Explorez la danse subaquatique et l’apnée dans des paysages marins d’exception, au rythme des vagues et de la vie sous-marine. Hébergement et activités inclus. Tarif : 1950€.",
+			"city": "Faial",
+			"banner": "Stage à Faial (Açores) du 24 au 31 août 2026",
+			"banner_sm": "Stage à Faial du 24 au 31 août"
 		},
 		"romont": {
 			"name": "Stage à Romont (Suisse)",
@@ -89,7 +96,8 @@
 	},
 	"events": {
 		"title": "Nos Prochains Événements",
-		"text": "Découvrez les prochaines initiations et ateliers Aqua Dance Flow. Chaque session est une invitation à explorer votre potentiel aquatique dans un univers d'apesanteur et de créativité. Réservez dès maintenant votre place pour vivre une expérience unique avec Julie Gautier."
+		"text": "Découvrez les prochaines initiations et ateliers Aqua Dance Flow. Chaque session est une invitation à explorer votre potentiel aquatique dans un univers d'apesanteur et de créativité. Réservez dès maintenant votre place pour vivre une expérience unique avec Julie Gautier.",
+		"soldOut": "Complet"
 	},
 	"server_messages": {
 		"email_required": "Le prénom est requis.",

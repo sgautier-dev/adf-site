@@ -12,17 +12,40 @@ export default function Events({
 	fetchedEvents: ReturnedEvent[]
 }) {
 	const { translations, language } = useLanguage()
+
 	// Get manually added events (non-Eventbrite)
 	const customEvents = getCustomEvents(translations)
 
-	// Merge all events and sort by date
-	const events: ReturnedEvent[] = [...fetchedEvents, ...customEvents].sort(
-		(a, b) => {
+	const today = new Date()
+	today.setHours(0, 0, 0, 0)
+
+	const allEvents: ReturnedEvent[] = [...fetchedEvents, ...customEvents]
+
+	// Future and ongoing events first, sorted from nearest to latest
+	const upcomingEvents = allEvents
+		.filter((event) => {
+			const eventEndDate = new Date(event.endDate ?? event.startDate)
+			return eventEndDate >= today
+		})
+		.sort((a, b) => {
 			const dateA = new Date(a.startDate).getTime()
 			const dateB = new Date(b.startDate).getTime()
 			return dateA - dateB
-		}
-	)
+		})
+
+	// Past events after, sorted from most recent to oldest
+	const pastEvents = allEvents
+		.filter((event) => {
+			const eventEndDate = new Date(event.endDate ?? event.startDate)
+			return eventEndDate < today
+		})
+		.sort((a, b) => {
+			const dateA = new Date(a.startDate).getTime()
+			const dateB = new Date(b.startDate).getTime()
+			return dateB - dateA
+		})
+
+	const events: ReturnedEvent[] = [...upcomingEvents, ...pastEvents]
 
 	return (
 		<div className="overflow-hidden bg-white">
@@ -40,18 +63,17 @@ export default function Events({
 					{events.map((event) => (
 						<a
 							key={event.id}
-							href={event.isSoldOut ? undefined : event.url} // No link if sold out
+							href={event.isSoldOut ? undefined : event.url}
 							target={event.isSoldOut ? undefined : "_blank"}
 							rel={event.isSoldOut ? undefined : "noopener noreferrer"}
-							aria-disabled={event.isSoldOut} // Mark as disabled for accessibility
+							aria-disabled={event.isSoldOut}
 							className={`group relative flex flex-col items-start justify-between rounded-2xl transition ${
 								event.isSoldOut
 									? "cursor-not-allowed opacity-60"
 									: "hover:bg-gray-100"
-							} `}
+							}`}
 						>
 							<div className="relative w-full">
-								{/* Event Image */}
 								<Image
 									alt="Événements aqua dance flow"
 									src={event.imageUrl ?? fallback}
@@ -60,20 +82,17 @@ export default function Events({
 									height={700}
 								/>
 
-								{/* Sold Out Sticker */}
 								{event.isSoldOut && (
 									<div className="absolute top-3 right-3 z-10 rounded-full bg-paleRed px-3 py-1.5 font-medium text-white">
-										Complet
+										{translations.events.soldOut}
 									</div>
 								)}
 
 								<div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
 							</div>
 
-							{/* Event Details */}
 							<div className="max-w-xl pb-6">
 								<div className="mt-8 flex items-center gap-x-4 text-lg">
-									{/* Event Date */}
 									<time
 										dateTime={event.startDate}
 										className="text-cadetBlue font-semibold"
@@ -81,17 +100,15 @@ export default function Events({
 										{formatEventDate(event.startDate, event.endDate, language)}
 									</time>
 
-									{/* Event City */}
-									<div className="relative uppercase z-10 rounded-full bg-gray-50 px-3 py-1.5 font-semibold text-gray-600">
+									<div className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-semibold uppercase text-gray-600">
 										{event.city}
 									</div>
 								</div>
 
-								{/* Event Name and Summary */}
 								<h3 className="mt-3 text-lg/6 font-semibold text-gray-900">
 									{event.name}
 								</h3>
-								<p className="mt-5 line-clamp-4 text-sm/6 text-gray-600">
+								<p className="mt-5 line-clamp-6 text-sm/6 text-gray-600">
 									{event.summary}
 								</p>
 							</div>

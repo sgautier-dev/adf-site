@@ -1,11 +1,18 @@
 {
 	"customEvents": {
-		"bastia": {
-			"name": "Workshop in Bastia (Corsica)",
-			"summary": "Experience Aqua Dance Flow with Julie Gautier from September 19–21, 2025 in Bastia. Discover the art of underwater movement in a stunning Mediterranean setting.",
+		"corse": {
+			"name": "Retreat in Bastia (Corsica)",
+			"summary": "Treat yourself to an Aqua Dance Flow & Yoga retreat from July 1 to 5, 2026 in Northern Corsica, in a private villa overlooking the sea. A stay to reconnect with yourself through yoga and underwater movement. Accommodation, meals and activities included. Price: €2,850.",
 			"city": "Bastia",
-			"banner": "ADF workshop in Bastia Sept 19–21, 2025",
-			"banner_sm": "Wokshop in Bastia, Sept 19–21"
+			"banner": "Retreat in Bastia (Corsica), July 1–5, 2026",
+			"banner_sm": "Retreat in Bastia, July 1–5"
+		},
+		"acores": {
+			"name": "Workshop in Faial (Azores)",
+			"summary": "Discover Aqua Dance Flow from August 24 to 31, 2026 on Faial Island in the Azores. Explore underwater movement and freediving in an exceptional marine setting, in the heart of the Atlantic. Accommodation and activities included. Price: €1,950.",
+			"city": "Faial",
+			"banner": "Workshop in Faial (Azores), Aug 24–31, 2026",
+			"banner_sm": "Workshop in Faial, Aug 24–31"
 		},
 		"romont": {
 			"name": "Workshop in Romont (Switzerland)",
@@ -89,7 +96,8 @@
 	},
 	"events": {
 		"title": "Our Upcoming Events",
-		"text": "Discover the upcoming Aqua Dance Flow initiations and workshops. Each session is an invitation to explore your aquatic potential in a world of weightlessness and creativity. Book your spot now to experience a unique moment with Julie Gautier."
+		"text": "Discover the upcoming Aqua Dance Flow initiations and workshops. Each session is an invitation to explore your aquatic potential in a world of weightlessness and creativity. Book your spot now to experience a unique moment with Julie Gautier.",
+		"soldOut": "Sold out"
 	},
 	"server_messages": {
 		"email_required": "First name is required.",
