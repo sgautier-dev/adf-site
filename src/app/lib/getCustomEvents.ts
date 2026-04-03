@@ -5,6 +5,20 @@ import { Translations } from "@/app/lib/translations"
 export function getCustomEvents(translations: Translations): ReturnedEvent[] {
 	return [
 		{
+			id: "dax",
+			name: translations.customEvents.dax.name,
+			summary: translations.customEvents.dax.summary,
+			startDate: "2026-06-06",
+			endDate: "2026-06-07",
+			imageUrl: "/images/aquaflow_stage_piscine.jpg",
+			url: "/contact",
+			isSoldOut: false,
+			city: translations.customEvents.dax.city,
+			banner: translations.customEvents.dax.banner,
+			banner_sm: translations.customEvents.dax.banner_sm,
+			highlighted: false,
+		},
+		{
 			id: "corse",
 			name: translations.customEvents.corse.name,
 			summary: translations.customEvents.corse.summary,

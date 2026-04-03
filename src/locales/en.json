@@ -1,5 +1,12 @@
 {
 	"customEvents": {
+		"dax": {
+			"name": "Workshop in Dax",
+			"summary": "Join Aqua Dance Flow on June 6 and 7, 2026 at the Aquae aquatic center in Dax for a pool workshop with Julie Gautier. More information and pre-registration details coming soon.",
+			"city": "Dax",
+			"banner": "Workshop in Dax, June 6–7, 2026",
+			"banner_sm": "Workshop in Dax · June 6–7"
+		},
 		"corse": {
 			"name": "Retreat in Bastia (Corsica)",
 			"summary": "Treat yourself to an Aqua Dance Flow & Yoga retreat from July 1 to 5, 2026 in Northern Corsica, in a private villa overlooking the sea. A stay to reconnect with yourself through yoga and underwater movement. Accommodation, meals and activities included. Price: €2,850.",

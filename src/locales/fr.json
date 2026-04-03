@@ -1,5 +1,12 @@
 {
 	"customEvents": {
+		"dax": {
+			"name": "Stage à Dax",
+			"summary": "Retrouvez Aqua Dance Flow les 6 et 7 juin 2026 au Centre aquatique Aquae de Dax pour un stage en piscine avec Julie Gautier. Informations complémentaires et pré-inscriptions à venir.",
+			"city": "Dax",
+			"banner": "Stage à Dax les 6 et 7 juin 2026",
+			"banner_sm": "Stage à Dax · 6–7 juin"
+		},
 		"corse": {
 			"name": "Retraite à Bastia (Corse)",
 			"summary": "Offrez-vous une retraite Aqua Dance Flow & Yoga du 1er au 5 juillet 2026 en Haute Corse, dans une villa privatisée surplombant la mer. Un séjour pour se reconnecter à soi à travers le yoga et la danse subaquatique. Hébergement, repas et activités inclus. Tarif : 2850€.",
