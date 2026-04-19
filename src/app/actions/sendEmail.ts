@@ -45,26 +45,42 @@ const sendEmail = actionClient
 
 			await checkArcJetProtection()
 
-			await resend.emails.send({
+			const { error } = await resend.emails.send({
 				from: "ADF Contact <contact@aquadanceflow.com>",
 				to: ["contact@aquadanceflow.com"],
-				replyTo: email as string,
-				subject: `Message de ${firstName} ${lastName}`,
+				replyTo: email,
+				subject: `ADF - Message de ${firstName} ${lastName}`,
+				text: `Nouveau message depuis le formulaire ADF
+
+Prénom : ${firstName}
+Nom : ${lastName}
+Email : ${email}
+Téléphone : ${phone || "-"}
+Message :
+${message}
+`,
 				react: React.createElement(EmailTemplate, {
-					firstName: firstName as string,
-					lastName: lastName as string,
-					senderEmail: email as string,
-					phone: phone as string,
-					message: message as string,
+					firstName,
+					lastName,
+					senderEmail: email,
+					phone: phone || "",
+					message,
 				}),
 			})
+
+			if (error) {
+				console.error("Resend error:", error)
+				throw new Error(error.message || "Erreur lors de l'envoi de l'email")
+			}
+
+			// console.log("Resend success:", data)
 
 			const translations = await getTranslations(locale)
 
 			return {
 				message: translations.server_messages.email_sent,
 			}
-		}
+		},
 	)
 
 export default sendEmail
