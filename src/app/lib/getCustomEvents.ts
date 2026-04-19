@@ -5,13 +5,27 @@ import { Translations } from "@/app/lib/translations"
 export function getCustomEvents(translations: Translations): ReturnedEvent[] {
 	return [
 		{
+			id: "bruxelles",
+			name: translations.customEvents.bruxelles.name,
+			summary: translations.customEvents.bruxelles.summary,
+			startDate: "2026-05-23",
+			endDate: "2026-05-24",
+			imageUrl: "/images/home-bg.png",
+			url: "/docs/stage-bruxelles-mai-2026.pdf",
+			isSoldOut: false,
+			city: translations.customEvents.bruxelles.city,
+			banner: translations.customEvents.bruxelles.banner,
+			banner_sm: translations.customEvents.bruxelles.banner_sm,
+			highlighted: false,
+		},
+		{
 			id: "dax",
 			name: translations.customEvents.dax.name,
 			summary: translations.customEvents.dax.summary,
 			startDate: "2026-06-06",
 			endDate: "2026-06-07",
 			imageUrl: "/images/aquaflow_stage_piscine.jpg",
-			url: "/contact",
+			url: "/docs/stage-dax-juin-2026.pdf",
 			isSoldOut: false,
 			city: translations.customEvents.dax.city,
 			banner: translations.customEvents.dax.banner,

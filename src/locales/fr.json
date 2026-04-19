@@ -1,8 +1,15 @@
 {
 	"customEvents": {
+		"bruxelles": {
+			"name": "Stage à Bruxelles",
+			"summary": "Retrouvez Aqua Dance Flow les 23 et 24 mai 2026 à la Piscine Nemo 33 de Bruxelles pour un stage avec Julie Gautier. Deux journées pour explorer la respiration, le mouvement dansé sous l’eau, l’improvisation et la chorégraphie.",
+			"city": "Bruxelles",
+			"banner": "Stage à Bruxelles les 23 et 24 mai 2026",
+			"banner_sm": "Stage à Bruxelles · 23–24 mai"
+		},
 		"dax": {
 			"name": "Stage à Dax",
-			"summary": "Retrouvez Aqua Dance Flow les 6 et 7 juin 2026 au Centre aquatique Aquae de Dax pour un stage en piscine avec Julie Gautier. Informations complémentaires et pré-inscriptions à venir.",
+			"summary": "Retrouvez Aqua Dance Flow les 6 et 7 juin 2026 à la Piscine Aquae de Dax pour un stage en piscine avec Julie Gautier. Deux journées pour explorer la respiration, le mouvement sous l’eau et l’expression corporelle dans un cadre propice à l’apprentissage.",
 			"city": "Dax",
 			"banner": "Stage à Dax les 6 et 7 juin 2026",
 			"banner_sm": "Stage à Dax · 6–7 juin"
