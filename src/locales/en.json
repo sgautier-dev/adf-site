@@ -1,18 +1,18 @@
 {
 	"customEvents": {
-		"bruxelles": {
-			"name": "Workshop in Brussels",
-			"summary": "Join Aqua Dance Flow on May 23 and 24, 2026 at Nemo 33 in Brussels for a workshop with Julie Gautier. Two days to explore breathing, underwater movement, improvisation and choreography.",
-			"city": "Brussels",
-			"banner": "Workshop in Brussels, May 23–24, 2026",
-			"banner_sm": "Workshop in Brussels · May 23–24"
-		},
 		"dax": {
 			"name": "Workshop in Dax",
-			"summary": "Join Aqua Dance Flow on June 6 and 7, 2026 at Piscine Aquae in Dax for a pool workshop with Julie Gautier. Two days to explore breathing, underwater movement and body expression .",
+			"summary": "Join Aqua Dance Flow on June 6 and 7, 2026 at Piscine Aquae in Dax for a pool workshop with Julie Gautier. Two days to explore breathing, underwater movement and body expression. Price: €290.",
 			"city": "Dax",
 			"banner": "Workshop in Dax, June 6–7, 2026",
 			"banner_sm": "Workshop in Dax · June 6–7"
+		},
+		"bruxelles": {
+			"name": "Workshop in Brussels",
+			"summary": "Join Aqua Dance Flow on May 23 and 24, 2026 at Nemo 33 in Brussels for a workshop with Julie Gautier. Two days to explore breathing, underwater movement and choreography. Price: €600 for both days.",
+			"city": "Brussels",
+			"banner": "Workshop in Brussels, May 23–24, 2026",
+			"banner_sm": "Workshop in Brussels · May 23–24"
 		},
 		"corse": {
 			"name": "Retreat in Bastia (Corsica)",
