@@ -1,6 +1,7 @@
 "use client" // for translations
 
-import cressiLogo from "../../../public/images/logos/Cressi_logo.png"
+// import cressiLogo from "../../../public/images/logos/Cressi_logo.png"
+import adfLogo from "../../../public/images/logos/ADF-logo.png"
 import Image from "next/image"
 import { getLegal, getMenu } from "@/app/lib/navigation"
 import { useLanguage } from "./LanguageContext"
@@ -67,7 +68,7 @@ export default function Footer() {
 							<span className="sr-only">Cressi</span>
 							<Image
 								alt="aqua dance flow logo"
-								src={cressiLogo}
+								src={adfLogo}
 								className="h-20 w-auto"
 							/>
 						</a>

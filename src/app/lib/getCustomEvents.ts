@@ -12,7 +12,7 @@ export function getCustomEvents(translations: Translations): ReturnedEvent[] {
 			endDate: "2026-05-24",
 			imageUrl: "/images/home-bg.png",
 			url: "/docs/stage-bruxelles-mai-2026.pdf",
-			isSoldOut: true,
+			isSoldOut: false,
 			city: translations.customEvents.bruxelles.city,
 			banner: translations.customEvents.bruxelles.banner,
 			banner_sm: translations.customEvents.bruxelles.banner_sm,
